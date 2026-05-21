@@ -95,7 +95,7 @@ export default function Carousel({ title, items = [] }) {
 //   data       { label, color, textColor } — usado en DoublePanelCard
 
 import { useState, useRef, useEffect } from "react";
-import InnerCard from "../components/InnerCard";
+import InnerCard from "./InnerCard";
 
 export default function Carousel({
   items = [],

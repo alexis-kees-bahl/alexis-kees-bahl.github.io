@@ -7,7 +7,7 @@
 //   items  Array<{ title, description, bgColor }>
 
 import { useState } from "react";
-import OuterCard from "../components/OuterCard";
+import OuterCard from "./OuterCard";
 import Carousel from "./Carousel";
 import "../cards.css";
 
