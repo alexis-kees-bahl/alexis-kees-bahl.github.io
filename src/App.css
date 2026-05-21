@@ -1,0 +1,314 @@
+main {
+  width: 100%;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- All cards ----- */
+
+* {
+  font-family: "JetBrains Mono", monospace;
+  box-sizing: border-box;
+}
+
+.card {
+  background: linear-gradient(150deg,
+    rgba(255, 255, 255, 0.4) 0% 15%,
+    rgba(255, 255, 255, 0.1) 30% 60%,
+    rgba(255, 255, 255, 0.5) 78% 78.5%,
+    rgba(255, 255, 255, 0.1) 88% 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset -2px 4px 8px -2px rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+  width: 100%;
+  min-width: 400px;
+  max-width: 500px;
+}
+
+.card:hover {
+  box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.08),
+    inset 0 2px 4px 0 rgba(255, 255, 255, 0.3);
+  transform: translate(-2px, -2px);
+  cursor: pointer;
+}
+
+/* =============================================
+   CardDatos
+   ============================================= */
+
+.card-datos {
+  padding: 1.5rem;
+}
+.card-datos h2 {
+  font-size: 17px;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+.card-datos-body {
+  font-size: 14px;
+  color: #222;
+  line-height: 1.65;
+}
+
+/* =============================================
+   OuterCard — header / body / nav
+   ============================================= */
+
+   .oc-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.oc-nav--visible {
+  height: 48px;
+  opacity: 1;
+}
+
+.outer-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.oc-header {
+  padding: 1.25rem 1.5rem 0.75rem;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+.oc-header h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+}
+
+.oc-body {
+  flex: 1;
+  overflow: hidden;
+}
+
+
+.nav-btn {
+  background: none;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "JetBrains Mono", monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.15s;
+}
+.nav-btn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.05);
+}
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.nav-counter {
+  font-size: 12px;
+  color: #888;
+}
+
+/* =============================================
+   inner-card
+   ============================================= */
+
+.inner-card {
+  min-width: 100cqw;
+  flex-shrink: 0;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  position: relative;
+}
+
+.inner-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.08) 60%
+  );
+}
+
+.inner-card-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.inner-card-content h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 3px;
+}
+.inner-card-content p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.5;
+}
+
+
+
+/* =============================================
+   Carousel
+   ============================================= */
+
+.carousel-track-wrap {
+  overflow: hidden;
+  width: 100%;
+  container-type: inline-size;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.carousel-nav {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+
+.carousel-nav-dots {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 12px;
+  left: 50%;
+  display: flex;
+  gap: 5px;
+  z-index: 2;
+}
+.carousel-nav-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0,0,0, 0.35);
+  transition: background 0.2s;
+}
+.carousel-nav-dot.active {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* =============================================
+   PanelDoble
+   ============================================= */
+
+.dual-panels {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+}
+
+.carousel {
+  flex: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: flex 0.38s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+}
+
+.carousel--hidden {
+  flex: 0;
+  min-width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.carousel--expanded {
+  cursor: default;
+}
+
+
+
+.panel--hidden {
+  flex: 0;
+  min-width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.panel--expanded {
+  cursor: default;
+}
+
+.panel-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+.panel-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+.panel-hint {
+  font-size: 10px;
+  opacity: 0.55;
+  letter-spacing: 0.05em;
+}
+
+.panel-carousel-inner {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.panel-item {
+  min-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  position: relative;
+}
+.panel-item h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.panel-item p {
+  font-size: 12px;
+  opacity: 0.72;
+  line-height: 1.4;
+}
