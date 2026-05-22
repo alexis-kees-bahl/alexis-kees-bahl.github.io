@@ -90,19 +90,20 @@ y Expresiones en Inglés`,
 const experiencia = [
   {
     title: "Proyecto PSI",
-    description: "Identidad visual completa + sitio web",
+    description: "Proyecto en curso. Análisis de requisitos, identidad visual, estrategia de marketing",
     bgColor: "#383858",
   },
   {
-    title: "Branding Estudio X",
-    description: "Logo, paleta y sistema tipográfico",
+    title: "Laku indumentaria",
+    description: "Aplicación frontend con React. Análisis de requisitos, identidad visual, desarrollo de aplicación React",
     bgColor: "#2d1b4e",
   },
   {
-    title: "Portfolio personal",
-    description: "React + Vite, diseño y desarrollo",
+    title: "Aplicación backend Java+Spring+Hibernate",
+    description: "Proyecto en curso. Desarrollo de REST API con Java SE",
     bgColor: "#0d2137",
   },
+  {title: "Aplicación de notas", description:"Aplicación de notas personales con filtros y consulta a base de datos, realizada como ejercicio para postulación laboral"}
 ];
 
 const frontend = [
