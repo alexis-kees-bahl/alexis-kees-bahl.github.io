@@ -2,9 +2,7 @@
 import "./App.css";
 import Card from "./components/Card";
 
-const textoMultilinea = `Mail: alexiskeesbahl@mail.com
-Teléfono: +54-9-2214880444
-LinkedIn: linkedin.com/in/alexis-kees-bahl
+const textoMultilinea = `LinkedIn: linkedin.com/in/alexis-kees-bahl
 GitHub: github.com/alexis-kees-bahl`;
 
 const datosPersonales = [
