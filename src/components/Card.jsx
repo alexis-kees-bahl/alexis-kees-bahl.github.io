@@ -58,9 +58,7 @@ export default function Card({ title, items = [], items2 = null }) {
 
             <button
               className="nav-btn"
-              onClick={() => {go(current + 1);
-                console.log("Active set: ", activeSet, "\n active set length: ", activeSet.length, "\ncurrent: ", current)
-              }}
+              onClick={() => go(current + 1)}
               disabled={current === activeSet.length - 1}
               aria-label="Siguiente"
             >
