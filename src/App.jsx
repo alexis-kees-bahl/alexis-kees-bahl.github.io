@@ -2,8 +2,13 @@
 import "./App.css";
 import Card from "./components/Card";
 
-const textoMultilinea = `LinkedIn: linkedin.com/in/alexis-kees-bahl
-GitHub: github.com/alexis-kees-bahl`;
+const textoMultilinea = (
+  <>
+    LinkedIn: <a href="https://linkedin.com/in/alexis-kees-bahl">linkedin.com/in/alexis-kees-bahl</a>
+    {"\n"}
+    GitHub: <a href="https://github.com/alexis-kees-bahl">github.com/alexis-kees-bahl</a>
+  </>
+);
 
 const datosPersonales = [
   {
@@ -11,6 +16,7 @@ const datosPersonales = [
     description: textoMultilinea,
     bgColor: "rgba(255, 255, 255, 0.6)",
     txtColor: "#333",
+    titleColor:"#333",
     overlayColor: "rgba(255, 255, 255, 0)",
   },
 ];
@@ -157,7 +163,7 @@ const habilidadesBlandas = [
 export default function App() {
   return (
     <main>
-      <Card title="Datos Personales" items={datosPersonales} />
+      <Card title="Curriculum Vitae" items={datosPersonales} titleColor="#333"/>
 
       <Card title="Formación" items={formacion} />
 
@@ -173,7 +179,7 @@ export default function App() {
 
       <div className="footer">
         <p>Alexis Kees Bahl - 2026 - All rights reserved</p>
-        <p><a href="https://iconscout.com/icons/profile" class="text-underline font-size-sm" target="_blank">Icon</a> by <a href="https://iconscout.com/contributors/kudicon" class="text-underline font-size-sm" target="_blank">Kudicon</a></p>
+        <p><a href="https://iconscout.com/icons/profile" target="_blank">Icon</a> by <a href="https://iconscout.com/contributors/kudicon" target="_blank">Kudicon</a></p>
       </div>
     </main>
   );

@@ -1,6 +1,12 @@
+
+* {
+  font-family: "JetBrains Mono", monospace;
+  box-sizing: border-box;
+}
+
 main {
   width: 100%;
-  margin: 3rem 1rem 0 1rem;
+  padding: 3rem 1rem 0 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -11,18 +17,21 @@ main {
 
 h2 {
   font-size: 16px;
-  font-weight: 500;
-  color: #111;
+  font-weight: 600;
+  color: #333;
 }
 
-
-
-/* ---- All cards ----- */
-
-* {
-  font-family: "JetBrains Mono", monospace;
-  box-sizing: border-box;
+a {
+  color: inherit;
+  text-decoration: none;
+    color: #42ba90;
 }
+
+a:hover{
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
 
 .card {
   background: linear-gradient(
@@ -41,8 +50,9 @@ h2 {
   transition:
     box-shadow 0.2s,
     transform 0.2s;
-  min-width: 80%;
-  max-width: 500px;
+    width: 440px;
+    min-width: 300px;
+  max-width: 80%;
 }
 
 .card:hover {
@@ -50,7 +60,6 @@ h2 {
     10px 4px 8px rgba(0, 0, 0, 0.08),
     inset 0 2px 4px 0 rgba(255, 255, 255, 0.3);
   transform: translate(-2px, -2px);
-  cursor: pointer;
 }
 
 /* =============================================
@@ -89,6 +98,7 @@ h2 {
   z-index: 10;
   box-sizing: border-box;
   width: 100%;
+  cursor: default;
 }
 .inner-card-content h3 {
   white-space: pre-wrap;
@@ -155,8 +165,8 @@ h2 {
 
 .nav-btn,
 .close-btn {
-  background: rgba(0, 0, 0, 0.1);
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
   border-radius: 6px;
   min-width: 2rem;
   height: 2rem;
@@ -179,7 +189,7 @@ h2 {
 
 .nav-btn:hover:not(:disabled),
 .close-btn:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.1);
 }
 .nav-btn:disabled {
   opacity: 0.3;

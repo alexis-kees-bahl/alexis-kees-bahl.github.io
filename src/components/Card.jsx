@@ -147,6 +147,7 @@ export default function Card({ title, items = [], items2 = null }) {
               description={card.description}
               bgColor={card.bgColor}
               txtColor={card.txtColor}
+              titleColor={card.titleColor}
               overlayColor={card.overlayColor}
               isActive={index === current}
             />
