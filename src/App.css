@@ -42,7 +42,7 @@ h2 {
     box-shadow 0.2s,
     transform 0.2s;
   width: 100%;
-  min-width: 300px;
+  min-width: min-content;
   max-width: 500px;
 }
 
