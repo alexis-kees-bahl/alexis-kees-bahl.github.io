@@ -1,6 +1,6 @@
 // App.jsx
 import "./App.css";
-import OuterCard from "./components/OuterCard";
+import Card from "./components/Card";
 
 const textoMultilinea = `Mail: alexiskeesbahl@mail.com
 Teléfono: +54-9-2214880444
@@ -24,6 +24,11 @@ en Diseño y Desarrollo
 de Aplicaciones Multiplataforma`,
     description: "UNNOBA - 2022-2025",
   },
+  { title: "Univesidad Java", description: "Ing. Ubaldo Acosta - Udemy 2025" },
+  {
+    title: "Curso de Srping y React",
+    description: "Ing. Ubaldo Acosta - Udemy 2025",
+  },
   { title: "Programación Full Stack", description: "Platzi, 2021" },
   { title: "Curso de Git y GitHub", description: "Platzi, 2022" },
   {
@@ -41,29 +46,48 @@ lenguajes y paradigmas`,
     title: "Fundamentos de Ingeniería de Software",
     description: "Platzi, 2023",
   },
-  {title:`Curso de pensamiento lógico:
-datos, estructuras y funciones`, description:"Platzi, 2022"},
-  {title:`Algoritmos y diagramas de flujo`, description:"Platzi, 2022"},
-
+  {
+    title: `Curso de pensamiento lógico:
+datos, estructuras y funciones`,
+    description: "Platzi, 2022",
+  },
+  { title: `Algoritmos y diagramas de flujo`, description: "Platzi, 2022" },
+  { title: `Licenciado en Trabajo Social`, description: "UNLP - 2007-2013" },
 ];
 
 const ingles = [
-  {title: "Cerficiate in Advanced English (C1)", description: "University of Cambridge, 2019"},
-  {title:"Curso de Inglés para Programadores", description:"Platzi, 2022"},
-  {title:`Curso de Inglés Avanzado C1:
-Argumentos y Discusiones`, description:"Platzi, 2023"},
-  {title:`Curso de Inglés Avanzado C1:
+  {
+    title: "Cerficiate in Advanced English (C1)",
+    description: "University of Cambridge, 2019",
+  },
+  { title: "Curso de Inglés para Programadores", description: "Platzi, 2022" },
+  {
+    title: `Curso de Inglés Avanzado C1:
+Argumentos y Discusiones`,
+    description: "Platzi, 2023",
+  },
+  {
+    title: `Curso de Inglés Avanzado C1:
 Recursos Conversacionales
-y Lingüísticos`, description:"Platzi, 2023"},
-  {title:`Curso de Inglés Avanzado:
-Comunicación Persuasiva y Efectiva `, description:"Platzi, 2023"},
-  {title:`Curso de Inglés Avanzado C1:
-Presentaciones y Expresión Oral`, description:"Platzi, 2023"},
-  {title:`Curso Avanzado de Vocabulario
-y Expresiones en Inglés`, description:"Platzi, 2023"},
-
-
-]
+y Lingüísticos`,
+    description: "Platzi, 2023",
+  },
+  {
+    title: `Curso de Inglés Avanzado:
+Comunicación Persuasiva y Efectiva `,
+    description: "Platzi, 2023",
+  },
+  {
+    title: `Curso de Inglés Avanzado C1:
+Presentaciones y Expresión Oral`,
+    description: "Platzi, 2023",
+  },
+  {
+    title: `Curso Avanzado de Vocabulario
+y Expresiones en Inglés`,
+    description: "Platzi, 2023",
+  },
+];
 
 const experiencia = [
   {
@@ -84,34 +108,69 @@ const experiencia = [
 ];
 
 const frontend = [
-  { title: "React", description: "Vite, hooks, estado global" },
   { title: "HTML & CSS", description: "Semántico, responsive, animaciones" },
   { title: "JavaScript", description: "ES6+, async, DOM" },
+  { title: "React", description: "Vite, hooks, states, effects, router" },
 ];
 
 const backend = [
   { title: "Java Spring Boot", description: "JPA, Hibernate, REST APIs" },
-  { title: "SQL", description: "Diseño relacional, consultas complejas" },
+  { title: "SQL + MySQL", description: "Diseño relacional, consultas complejas" },
+  {title:"Node.js", description:""},
+  {title: "Amazon Web Services", description:"S3, Route 53, CloudFront"}
 ];
 
-const habilidadesBlandas = []
+const otras = [
+  {title:"Control de versiones", description:"Git y GitHub"},
+  {title: "Sistemas operativos", description: "Windows y Linux (Ubuntu, Kali)"},
+  {title: "Gestión de proyectos", description: "Trello, Miro, Diagrama de Gantt, Calendar, Notion, Excalidraw, Draw.io"},
+  {title: "Diseño gráfico", description: "Photoshop, Illustrator, Figma, Corel Draw"},
+]
+
+const habilidadesBlandas = [
+  {
+    title: "Comunicación",
+    description:
+      "Vasta experiencia conformado y dirigiendo equipos interdisciplinarios. Habilidades de comunicación efectiva y liderazgo colaborativo.",
+  },
+  {
+    title: "Visión integral",
+    description:
+      "Diseño de proyectos considerando desde el principio los distintos aspectos y momentos de una aplicación.",
+  },
+  {
+    title: "Análisis de requisitos",
+    description:
+      "Identificación de necesidades y traducción en requisitos funcionales.",
+  },
+
+  {
+    title: "Gestión de proyectos",
+    description:
+      "Diseño y gestión de proyectos profesionales multisectoriales, con estrategias ajustadas a objetivos.",
+  },
+  {
+    title: "Seguimiento de procesos",
+    description: "Capacidad analítica y enfoque estratégico.",
+  },
+];
 
 export default function App() {
   return (
     <main>
-      <OuterCard title="Datos Personales" items={datosPersonales} />
+      <Card title="Datos Personales" items={datosPersonales} />
 
-      <OuterCard title="Formación" items={formacion} />
+      <Card title="Formación" items={formacion} />
 
-      <OuterCard title="Inglés" items={ingles} />
+      <Card title="Inglés" items={ingles} />
 
-      <OuterCard title="Experiencia" items={experiencia} />
+      <Card title="Experiencia" items={experiencia} />
 
-      <OuterCard title="Habilidades técnicas" items={frontend} items2={backend} />
+      <Card title="Habilidades técnicas" items={frontend} items2={backend} />
 
-      <OuterCard title="Habilidades blandas" items={habilidadesBlandas} />
+      <Card title="Otras habilidades técnicas" items={otras}/>
 
-
+      <Card title="Habilidades blandas" items={habilidadesBlandas} />
     </main>
   );
 }

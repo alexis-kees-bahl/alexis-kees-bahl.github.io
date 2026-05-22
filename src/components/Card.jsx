@@ -8,21 +8,20 @@ import { useEffect } from "react";
 import InnerCard from "./InnerCard";
 import "../App.css";
 
-export default function OuterCard({ title, items = [], items2 = null }) {
+export default function Card({ title, items = [], items2 = null }) {
   const [current, setCurrent] = useState(0);
   const [cards, setCards] = useState(items);
   const [cards2, setCards2] = useState(items2);
-  const [activeSet, setActiveSet] = useState(null);
+  const [activeSet, setActiveSet] = useState(cards);
+  const [showDualPanels, setShowDualPanels] = useState(false);
   const [hasItems2, setHasItems2] = useState(items2 !== null);
 
   const fillItems2 = () => {
     if (hasItems2) {
       setCards2(items2);
       setHasItems2(true);
-      setActiveSet(null);
-    } else {
-      setActiveSet(cards);
-    }
+      setShowDualPanels(true)
+    } 
   };
 
   useEffect(() => {
@@ -36,7 +35,7 @@ export default function OuterCard({ title, items = [], items2 = null }) {
   const RenderNav = (set) => {
     return (
       <nav className="carousel-nav">
-        {hasItems2 && (
+        {hasItems2 && !showDualPanels && (
           <>
             <button
               className="nav-btn"
@@ -50,7 +49,7 @@ export default function OuterCard({ title, items = [], items2 = null }) {
             <button
               className="close-btn"
               onClick={() => {
-                setActiveSet(null);
+                setShowDualPanels(true);
                 setCurrent(0);
               }}
             >
@@ -101,66 +100,77 @@ export default function OuterCard({ title, items = [], items2 = null }) {
     );
   };
 
+  const RenderDualPanel = () => {
+    return (
+      <div
+        className={`dual-panels${hasItems2 && showDualPanels ===true ? "" : " dual-panels--hidden"}`}
+      >
+        <div className="panel" style={{ background: "#b768fc" }}>
+          <div className="overlay" />
+          <div className="inner-card-content">
+          
+          <h3 style={{ color: "#fffb8d", zIndex: 10 }}>Frontend</h3>
+          <button
+            style={{ color: "#1cc", zIndex: 10 }}
+            onClick={() => {setActiveSet(cards);  setShowDualPanels(false)}}
+          >
+            View details
+          </button>
+          </div>
+        </div>
+        <div className="panel" style={{ background: "#131415" }}>
+          <div className="overlay" />
+          <div className="inner-card-content">
+          <h3 style={{ color: "#42ba90", zIndex: 10 }}>Backend</h3>
+          <button
+            style={{ color: "#999", zIndex: 100 }}
+            onClick={() => {setActiveSet(cards2); setShowDualPanels(false)}}
+          >
+            View details{" "}
+          </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const RenderSetOfCards = () => {
+    return (
+      <div
+        className={`set-of-cards${activeSet ? "" : " set-of-cards--hidden"}`}
+        style={{ transform: `translateX(-${current * 100}%)`, opacity: `${hasItems2 && showDualPanels ? "0" : "1"}`}}
+      >
+        {activeSet.map((card, index) => (
+            <InnerCard
+              key={card.id || index}
+              title={card.title}
+              description={card.description}
+              bgColor={card.bgColor}
+              txtColor={card.txtColor}
+              overlayColor={card.overlayColor}
+              isActive={index === current}
+            />
+          ))}
+      </div>
+    );
+  };
+
   return (
     <div className="card outer-card">
-
       <div className="oc-header">
         <h2>{title}</h2>
       </div>
-
       <div
-        className={`cards-viewer${hasItems2 && activeSet === null ? "-dual" : ""}`}
+        className="cards-viewer"
       >
-        {hasItems2 && (
-          <div
-            className={`dual-panels${hasItems2 && activeSet === null ? "--visible" : "--hidden"}`}
-          >
-            <div className="panel" style={{ background: "#b768fc" }}>
-              <div className="overlay" />
-              <h2 style={{ color: "#fffb8d", zIndex: 10 }}>Frontend</h2>
-              <button
-                style={{ color: "#1cc", zIndex: 10 }}
-                onClick={() => setActiveSet(cards)}
-              >
-                View details
-              </button>
-            </div>
-            <div className="panel" style={{ background: "#131415" }}>
-              <div className="overlay" />
-              <h2 style={{ color: "#42ba90", zIndex: 10 }}>Backend</h2>
-              <button
-                style={{ color: "#999", zIndex: 100 }}
-                onClick={() => setActiveSet(cards2)}
-              >
-                View details{" "}
-              </button>
-            </div>
-          </div>
-        )}
-
-        <div
-          className={`set-of-cards${activeSet ? "--visible" : "--hidden"}`}
-          style={{ transform: `translateX(-${current * 100}%)` }}
-        >
-          {activeSet &&
-            activeSet.map((card, index) => (
-              <InnerCard
-                key={card.id || index}
-                title={card.title}
-                description={card.description}
-                bgColor={card.bgColor}
-                txtColor={card.txtColor}
-                overlayColor={card.overlayColor}
-                isActive={index === current}
-              />
-            ))}
-        </div>
+        {RenderDualPanel()}
+        {RenderSetOfCards()}
       </div>
-
       <div
-        className={`oc-nav${activeSet && activeSet.length > 1 ? " oc-nav--visible" : ""}`}
+        className={`oc-nav${activeSet && activeSet.length > 1 && !showDualPanels ? " oc-nav--visible" : ""}`}
       >
-        {activeSet && activeSet.length > 1 && RenderNav(activeSet)}
-      </div>    </div>
+        {RenderNav(activeSet)}
+      </div>{" "}
+    </div>
   );
 }

@@ -19,7 +19,7 @@ export default function InnerCard({
       <div className="overlay" style={{ background: overlayColor }} />
 
       <div className="inner-card-content">
-        {title && <h2>{title}</h2>}
+        {title && <h3>{title}</h3>}
         <p className="inner-card-description" style={{ color: txtColor }}>
           {description}
         </p>

@@ -9,6 +9,14 @@ main {
   justify-content: center;
 }
 
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+}
+
+
+
 /* ---- All cards ----- */
 
 * {
@@ -17,55 +25,41 @@ main {
 }
 
 .card {
-  background: linear-gradient(150deg,
+  background: linear-gradient(
+    150deg,
     rgba(255, 255, 255, 0.4) 0% 15%,
     rgba(255, 255, 255, 0.1) 30% 60%,
     rgba(255, 255, 255, 0.5) 78% 78.5%,
-    rgba(255, 255, 255, 0.1) 88% 100%);
+    rgba(255, 255, 255, 0.1) 88% 100%
+  );
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: inset -2px 4px 8px -2px rgba(255, 255, 255, 0.3);
   border-radius: 12px;
   overflow: hidden;
   position: relative;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
   width: 100%;
   min-width: 400px;
   max-width: 500px;
 }
 
 .card:hover {
-  box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.08),
+  box-shadow:
+    10px 4px 8px rgba(0, 0, 0, 0.08),
     inset 0 2px 4px 0 rgba(255, 255, 255, 0.3);
   transform: translate(-2px, -2px);
   cursor: pointer;
 }
 
 /* =============================================
-   CardDatos
-   ============================================= */
-
-.card-datos {
-  padding: 1.5rem;
-}
-.card-datos h2 {
-  font-size: 17px;
-  font-weight: 500;
-  color: #111;
-  margin-bottom: 0.5rem;
-}
-.card-datos-body {
-  font-size: 14px;
-  color: #222;
-  line-height: 1.65;
-}
-
-/* =============================================
    inner-card
    ============================================= */
 
-.inner-card {
-  min-width: 100cqw;
+.inner-card, .panel {
+  width: 100cqw;
   flex-shrink: 0;
   height: 180px;
   display: flex;
@@ -95,19 +89,19 @@ main {
   justify-content: center;
   z-index: 10;
   box-sizing: border-box;
+  width: 100%;
 }
-.inner-card-content h2 {
+.inner-card-content h3 {
   white-space: pre-wrap;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #fff;
   margin: auto;
-  margin-bottom:0.25rem;
-    color: #42ba90;
+  margin-bottom: 0.5rem;
+  color: #42ba90;
 }
 
 .inner-card-description {
-  white-space: pre-wrap;
   display: block;
   margin: auto;
   width: 100%;
@@ -115,17 +109,15 @@ main {
 }
 
 .inner-card-content p {
+  white-space: pre-wrap;
   font-size: 14px;
   line-height: 1.5;
+  width: 100%;
 }
-
-
 
 /* =============================================
    OuterCard — header / body / nav
    ============================================= */
-
-
 
 .oc-nav {
   display: flex;
@@ -136,8 +128,9 @@ main {
   overflow: hidden;
   opacity: 0;
   border-top: 0.5px solid rgba(0, 0, 0, 0.1);
-  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .oc-nav--visible {
@@ -155,19 +148,14 @@ main {
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
-.oc-header h2 {
-  font-size: 16px;
-  font-weight: 500;
-  color: #111;
-}
 
 .oc-body {
   flex: 1;
   overflow: hidden;
 }
 
-
-.nav-btn, .close-btn {
+.nav-btn,
+.close-btn {
   background: rgba(0, 0, 0, 0.1);
   border: 0.5px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
@@ -190,7 +178,8 @@ main {
   border-radius: 50%;
 }
 
-.nav-btn:hover:not(:disabled), .close-btn:hover {
+.nav-btn:hover:not(:disabled),
+.close-btn:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 .nav-btn:disabled {
@@ -202,8 +191,6 @@ main {
   color: #888;
 }
 
-
-
 /* =============================================
    Carousel
    ============================================= */
@@ -212,61 +199,59 @@ main {
   overflow: hidden;
   width: 100%;
   container-type: inline-size;
+    position: relative;
+    height: 180px;
 }
 
-
-.dual-panels--visible {
+.dual-panels {
+  position:relative;
   display: flex;
-    width: 100%;
-    min-height: 100%; 
-    justify-content: space-around;
-    opacity: 0.8;
+  width: 100%;
+  min-height: 100%;
+  justify-content: space-around;
+  opacity: 0.8;
+  transition: 0.3s transform ease-in-out;
+  z-index: 10;
 }
 
-
-.set-of-cards--hidden, .dual-panels--hidden {
-  flex: 0;
-  min-width: 0;
-  opacity: 0;
+.set-of-cards--hidden,
+.dual-panels--hidden {
+transform: translateY(-180px);
+    position: absolute;
   pointer-events: none;
 }
 
-.set-of-cards--visible {
+.set-of-cards {
+  position: relative;
   display: flex;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.panel{
-
-  min-width: 50%;
-  flex-shrink: 1;
-  height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.25rem 1.5rem;
-  position: relative;
+.panel {
+  max-width: 50%;
+  
 }
 
 .panel h2 {
   font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 20px;
 }
 
 .panel button {
   border: 0.5px solid;
   border-radius: 8px;
   padding: 0.25rem 0.75rem;
-  background: rgba(0,0,0,0.2);;
+  background: rgba(0, 0, 0, 0.2);
 }
 
-.panel button:active, .close-btn:active {
+.panel button:active,
+.close-btn:active {
   background: rgba(255, 255, 255, 0.1);
 }
 
 .carousel-nav {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -274,7 +259,7 @@ main {
 }
 
 .carousel-nav-dots {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   bottom: 12px;
@@ -288,109 +273,9 @@ main {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(0,0,0, 0.35);
+  background: rgba(0, 0, 0, 0.35);
   transition: background 0.2s;
 }
 .carousel-nav-dot.active {
   background: rgba(255, 255, 255, 1);
-}
-
-/* =============================================
-   PanelDoble
-   ============================================= */
-
-.dual-panels {
-  display: flex;
-  width: 100%;
-  min-height: 100%;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.dual-panels--hidden {
-  height: 0;
-  width: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-
-
-.carousel {
-  flex: 1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  transition: flex 0.38s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
-}
-
-.carousel--hidden {
-  flex: 0;
-  min-width: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-.carousel--expanded {
-  cursor: default;
-}
-
-
-
-.panel--hidden {
-  flex: 0;
-  min-width: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.panel--expanded {
-  cursor: default;
-}
-
-.panel-label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  pointer-events: none;
-}
-.panel-name {
-  font-size: 14px;
-  font-weight: 500;
-}
-.panel-hint {
-  font-size: 10px;
-  opacity: 0.55;
-  letter-spacing: 0.05em;
-}
-
-.panel-carousel-inner {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.panel-item {
-  min-width: 100%;
-  height: 100%;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.25rem;
-  position: relative;
-}
-.panel-item h4 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-.panel-item p {
-  font-size: 12px;
-  opacity: 0.72;
-  line-height: 1.4;
 }
