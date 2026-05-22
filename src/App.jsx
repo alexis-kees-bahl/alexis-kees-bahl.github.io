@@ -169,6 +169,11 @@ export default function App() {
       <Card title="Otras habilidades técnicas" items={otras}/>
 
       <Card title="Habilidades blandas" items={habilidadesBlandas} />
+
+      <div className="footer">
+        <p>Alexis Kees Bahl - 2026 - All rights reserved</p>
+        <p><a href="https://iconscout.com/icons/profile" class="text-underline font-size-sm" target="_blank">Icon</a> by <a href="https://iconscout.com/contributors/kudicon" class="text-underline font-size-sm" target="_blank">Kudicon</a></p>
+      </div>
     </main>
   );
 }
