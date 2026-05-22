@@ -29,10 +29,10 @@ export default function Card({ title, items = [], items2 = null }) {
   }, []);
 
   const go = (n) => {
-    setCurrent(Math.max(0, Math.min(n, cards.length - 1)));
+    setCurrent(Math.max(0, Math.min(n, activeSet.length - 1)));
   };
 
-  const RenderNav = (set) => {
+  const RenderNav = () => {
     return (
       <nav className="carousel-nav">
         {hasItems2 && !showDualPanels && (
@@ -58,8 +58,10 @@ export default function Card({ title, items = [], items2 = null }) {
 
             <button
               className="nav-btn"
-              onClick={() => go(current + 1)}
-              disabled={current === set.length - 1}
+              onClick={() => {go(current + 1);
+                console.log("Active set: ", activeSet, "\n active set length: ", activeSet.length, "\ncurrent: ", current)
+              }}
+              disabled={current === activeSet.length - 1}
               aria-label="Siguiente"
             >
               →
@@ -78,7 +80,7 @@ export default function Card({ title, items = [], items2 = null }) {
             </button>
 
             <div className="carousel-nav-dots">
-              {set.map((_, i) => (
+              {activeSet.map((_, i) => (
                 <span
                   key={i}
                   className={`carousel-nav-dot${i === current ? " active" : ""}`}
@@ -89,7 +91,7 @@ export default function Card({ title, items = [], items2 = null }) {
             <button
               className="nav-btn"
               onClick={() => go(current + 1)}
-              disabled={current === set.length - 1}
+              disabled={current === activeSet.length - 1}
               aria-label="Siguiente"
             >
               →
@@ -112,7 +114,7 @@ export default function Card({ title, items = [], items2 = null }) {
           <h3 style={{ color: "#fffb8d", zIndex: 10 }}>Frontend</h3>
           <button
             style={{ color: "#1cc", zIndex: 10 }}
-            onClick={() => {setActiveSet(cards);  setShowDualPanels(false)}}
+            onClick={() => {setActiveSet(cards);  setShowDualPanels(false); setCurrent(0)}}
           >
             View details
           </button>
@@ -124,7 +126,7 @@ export default function Card({ title, items = [], items2 = null }) {
           <h3 style={{ color: "#42ba90", zIndex: 10 }}>Backend</h3>
           <button
             style={{ color: "#999", zIndex: 100 }}
-            onClick={() => {setActiveSet(cards2); setShowDualPanels(false)}}
+            onClick={() => {setActiveSet(cards2); setShowDualPanels(false); setCurrent(0)}}
           >
             View details{" "}
           </button>
@@ -137,8 +139,8 @@ export default function Card({ title, items = [], items2 = null }) {
   const RenderSetOfCards = () => {
     return (
       <div
-        className={`set-of-cards${activeSet ? "" : " set-of-cards--hidden"}`}
-        style={{ transform: `translateX(-${current * 100}%)`, opacity: `${hasItems2 && showDualPanels ? "0" : "1"}`}}
+        className={`set-of-cards${hasItems2 && showDualPanels ? " set-of-cards--hidden" : ""}`}
+        style={{ transform: `translateX(-${current * 100}%)`}}
       >
         {activeSet.map((card, index) => (
             <InnerCard
@@ -169,7 +171,7 @@ export default function Card({ title, items = [], items2 = null }) {
       <div
         className={`oc-nav${activeSet && activeSet.length > 1 && !showDualPanels ? " oc-nav--visible" : ""}`}
       >
-        {RenderNav(activeSet)}
+        {RenderNav()}
       </div>{" "}
     </div>
   );
