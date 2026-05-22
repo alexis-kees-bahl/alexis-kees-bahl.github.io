@@ -4,21 +4,25 @@ It has a "dots" prop which is later used in css to create counter dots when the 
 */
 
 
-import "../cards.css";
+import "../App.css";
 
 export default function InnerCard({
-  title,
+  title=null,
   description,
-  bgColor = "#1a1a2e"
+  bgColor = "#333",
+  txtColor = "#FFF",
+  overlayColor = "rgba(0, 0, 0, 0.5)",
 }) {
   return (
     <div className="inner-card" style={{ background: bgColor }}>
 
-      <div className="inner-card-overlay" />
+      <div className="overlay" style={{ background: overlayColor }} />
 
       <div className="inner-card-content">
-        <h3>{title}</h3>
-        <p>{description}</p>
+        {title && <h2>{title}</h2>}
+        <p className="inner-card-description" style={{ color: txtColor }}>
+          {description}
+        </p>
       </div>
 
     </div>
