@@ -55,7 +55,7 @@ datos, estructuras y funciones`,
 
 const ingles = [
   {
-    title: "Cerficiate in Advanced English (C1)",
+    title: "Cerficate in Advanced English (C1)",
     description: "University of Cambridge, 2019",
   },
   { title: "Curso de Inglés para Programadores", description: "Platzi, 2022" },
