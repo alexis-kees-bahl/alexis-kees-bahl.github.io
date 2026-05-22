@@ -20,8 +20,8 @@ export default function Card({ title, items = [], items2 = null }) {
     if (hasItems2) {
       setCards2(items2);
       setHasItems2(true);
-      setShowDualPanels(true)
-    } 
+      setShowDualPanels(true);
+    }
   };
 
   useEffect(() => {
@@ -103,31 +103,38 @@ export default function Card({ title, items = [], items2 = null }) {
   const RenderDualPanel = () => {
     return (
       <div
-        className={`dual-panels${hasItems2 && showDualPanels ===true ? "" : " dual-panels--hidden"}`}
+        className={`dual-panels${hasItems2 && showDualPanels === true ? "" : " dual-panels--hidden"}`}
       >
         <div className="panel" style={{ background: "#b768fc" }}>
           <div className="overlay" />
           <div className="inner-card-content">
-          
-          <h3 style={{ color: "#fffb8d", zIndex: 10 }}>Frontend</h3>
-          <button
-            style={{ color: "#1cc", zIndex: 10 }}
-            onClick={() => {setActiveSet(cards);  setShowDualPanels(false); setCurrent(0)}}
-          >
-            View details
-          </button>
+            <h3 style={{ color: "#fffb8d", zIndex: 10 }}>Frontend</h3>
+            <button
+              style={{ color: "#1cc", zIndex: 10 }}
+              onClick={() => {
+                setActiveSet(cards);
+                setShowDualPanels(false);
+                setCurrent(0);
+              }}
+            >
+              View details
+            </button>
           </div>
         </div>
         <div className="panel" style={{ background: "#131415" }}>
           <div className="overlay" />
           <div className="inner-card-content">
-          <h3 style={{ color: "#42ba90", zIndex: 10 }}>Backend</h3>
-          <button
-            style={{ color: "#999", zIndex: 100 }}
-            onClick={() => {setActiveSet(cards2); setShowDualPanels(false); setCurrent(0)}}
-          >
-            View details{" "}
-          </button>
+            <h3 style={{ color: "#42ba90", zIndex: 10 }}>Backend</h3>
+            <button
+              style={{ color: "#999", zIndex: 100 }}
+              onClick={() => {
+                setActiveSet(cards2);
+                setShowDualPanels(false);
+                setCurrent(0);
+              }}
+            >
+              View details{" "}
+            </button>
           </div>
         </div>
       </div>
@@ -138,20 +145,20 @@ export default function Card({ title, items = [], items2 = null }) {
     return (
       <div
         className={`set-of-cards${hasItems2 && showDualPanels ? " set-of-cards--hidden" : ""}`}
-        style={{ transform: `translateX(-${current * 100}%)`}}
+        style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {activeSet.map((card, index) => (
-            <InnerCard
-              key={card.id || index}
-              title={card.title}
-              description={card.description}
-              bgColor={card.bgColor}
-              txtColor={card.txtColor}
-              titleColor={card.titleColor}
-              overlayColor={card.overlayColor}
-              isActive={index === current}
-            />
-          ))}
+          <InnerCard
+            key={card.id || index}
+            title={card.title}
+            description={card.description}
+            bgColor={card.bgColor}
+            txtColor={card.txtColor}
+            titleColor={card.titleColor}
+            overlayColor={card.overlayColor}
+            isActive={index === current}
+          />
+        ))}
       </div>
     );
   };
@@ -159,19 +166,24 @@ export default function Card({ title, items = [], items2 = null }) {
   return (
     <div className="card outer-card">
       <div className="oc-header">
-        <h2>{title}</h2>
+        {items.length === 0 ?
+        (<h1>{title}</h1>) : (<h2>{title}</h2>)}
       </div>
       <div
-        className="cards-viewer"
+        className={`cards-viewer${items.length === 0 ? " cards-viewer--empty" : ""}`}
       >
         {RenderDualPanel()}
-        {RenderSetOfCards()}
+        {items.length === 0 ? (
+          <div style={{ height: "0" }} />
+        ) : (
+          <RenderSetOfCards />
+        )}
       </div>
       <div
         className={`oc-nav${activeSet && activeSet.length > 1 && !showDualPanels ? " oc-nav--visible" : ""}`}
       >
         {RenderNav()}
-      </div>{" "}
+      </div>
     </div>
   );
 }

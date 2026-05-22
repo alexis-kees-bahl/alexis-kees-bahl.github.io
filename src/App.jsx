@@ -163,7 +163,8 @@ const habilidadesBlandas = [
 export default function App() {
   return (
     <main>
-      <Card title="Curriculum Vitae" items={datosPersonales} titleColor="#333"/>
+      <Card title="Curriculum Vitae"/>
+      <Card title="Datos y contacto" items={datosPersonales} titleColor="#333"/>
 
       <Card title="Formación" items={formacion} />
 
