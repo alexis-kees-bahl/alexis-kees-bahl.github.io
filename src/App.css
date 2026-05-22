@@ -61,23 +61,86 @@ main {
 }
 
 /* =============================================
+   inner-card
+   ============================================= */
+
+.inner-card {
+  min-width: 100cqw;
+  flex-shrink: 0;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  position: relative;
+  opacity: 0.8;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.08) 45%
+  );
+}
+
+.inner-card-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.inner-card-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin: auto;
+  margin-bottom:0.25rem;
+    color: #42ba90
+}
+
+.inner-card-description {
+  white-space: pre-wrap;
+  display: block;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.inner-card-content p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.5;
+}
+
+
+
+/* =============================================
    OuterCard — header / body / nav
    ============================================= */
 
-   .oc-nav {
+
+
+.oc-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  height: 0;
+  height: 1.5rem;
   overflow: hidden;
   opacity: 0;
   border-top: 0.5px solid rgba(0, 0, 0, 0.1);
   transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .oc-nav--visible {
-  height: 48px;
+  height: 4rem;
   opacity: 1;
 }
 
@@ -103,23 +166,30 @@ main {
 }
 
 
-.nav-btn {
-  background: none;
+.nav-btn, .close-btn {
+  background: rgba(0, 0, 0, 0.1);
   border: 0.5px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  min-width: 32px;
-  height: 32px;
+  min-width: 2rem;
+  height: 2rem;
   padding: 0 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 18px;
   font-family: "JetBrains Mono", monospace;
+  font-weight: 100;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   transition: background 0.15s;
 }
-.nav-btn:hover:not(:disabled) {
+
+.close-btn {
+  font-size: 14px;
+  border-radius: 50%;
+}
+
+.nav-btn:hover:not(:disabled), .close-btn:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 .nav-btn:disabled {
@@ -131,13 +201,45 @@ main {
   color: #888;
 }
 
+
+
 /* =============================================
-   inner-card
+   Carousel
    ============================================= */
 
-.inner-card {
-  min-width: 100cqw;
-  flex-shrink: 0;
+.cards-viewer {
+  overflow: hidden;
+  width: 100%;
+  container-type: inline-size;
+}
+
+
+.dual-panels--visible {
+  display: flex;
+    width: 100%;
+    min-height: 100%; 
+    justify-content: space-around;
+    opacity: 0.8;
+}
+
+
+.set-of-cards--hidden, .dual-panels--hidden {
+  flex: 0;
+  min-width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.set-of-cards--visible {
+  display: flex;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.panel{
+
+  min-width: 50%;
+  flex-shrink: 1;
   height: 180px;
   display: flex;
   flex-direction: column;
@@ -147,52 +249,19 @@ main {
   position: relative;
 }
 
-.inner-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.65) 0%,
-    rgba(0, 0, 0, 0.08) 60%
-  );
-}
-
-.inner-card-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-.inner-card-content h3 {
-  font-size: 16px;
+.panel h2 {
   font-weight: 500;
-  color: #fff;
-  margin-bottom: 3px;
-}
-.inner-card-content p {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.5;
 }
 
-
-
-/* =============================================
-   Carousel
-   ============================================= */
-
-.carousel-track-wrap {
-  overflow: hidden;
-  width: 100%;
-  container-type: inline-size;
+.panel button {
+  border: 0.5px solid;
+  border-radius: 8px;
+  padding: 0.25rem 0.75rem;
+  background: rgba(0,0,0,0.2);;
 }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
+.panel button:active, .close-btn:active {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .carousel-nav {
@@ -233,7 +302,19 @@ main {
   display: flex;
   width: 100%;
   min-height: 100%;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.dual-panels--hidden {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
 
 .carousel {
   flex: 1;

@@ -1,14 +1,41 @@
 // App.jsx
 import "./App.css";
 import ContactInfoCard from "./components/ContactInfoCard";
-import CarouselCard from "./components/CarouselCard";
-import MultiplePanelCard from "./components/MultiplePanelCard";
+import OuterCard from "./components/OuterCard";
+
+const textoMultilinea = `Mail: alexiskeesbahl@mail.com
+Teléfono: +54-9-2214880444
+LinkedIn: linkedin.com/in/alexis-kees-bahl
+GitHub: github.com/alexis-kees-bahl`;
+
+const datosPersonales = [
+  {
+    title: "Alexis Kees Bahl",
+    description: textoMultilinea,
+  },
+];
 
 const experiencia = [
-  { title: "Proyecto PSI", description: "Identidad visual completa + sitio web", bgColor: "#1a1a2e" },
-  { title: "Branding Estudio X", description: "Logo, paleta y sistema tipográfico", bgColor: "#2d1b4e" },
-  { title: "Portfolio personal", description: "React + Vite, diseño y desarrollo", bgColor: "#0d2137" },
+  {
+    title: "Proyecto PSI",
+    description: "Identidad visual completa + sitio web",
+    bgColor: "#383858",
+  },
+  {
+    title: "Branding Estudio X",
+    description: "Logo, paleta y sistema tipográfico",
+    bgColor: "#2d1b4e",
+  },
+  {
+    title: "Portfolio personal",
+    description: "React + Vite, diseño y desarrollo",
+    bgColor: "#0d2137",
+  },
 ];
+
+const prueba = [
+  {title: "Prueba 1", description: "Descripción de prueba 1", bgColor: "#3a0ca3"}
+]
 
 const frontend = [
   { title: "React", description: "Vite, hooks, estado global" },
@@ -24,21 +51,14 @@ const backend = [
 export default function App() {
   return (
     <main>
-      <ContactInfoCard title="Datos personales">
-        <p>Nombre: Ale</p>
-        <p>Mail: ale@mail.com</p>
-        <p>Teléfono: +54-9-...</p>
-      </ContactInfoCard>
+      
+      <OuterCard title="Datos Personales" items={datosPersonales} />
 
-      <CarouselCard title="Experiencia" items={experiencia} />
+      <OuterCard title="Experiencia" items={experiencia} />
 
-      <MultiplePanelCard
-  title="Lenguajes & tecnologías"
-  panels={[
-    { title: "Frontend", color: "#38d39f", textColor: "#04342c", items: frontend },
-    { title: "Backend", color: "#e673a1", textColor: "#4b1528", items: backend },
-  ]}
-/>
+      <OuterCard title="Habilidades" items={frontend} items2={backend} />
+
+      <OuterCard title="Prueba" items={prueba} />
     </main>
   );
 }

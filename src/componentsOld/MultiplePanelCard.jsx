@@ -10,8 +10,9 @@
 //   }>
 
 import { useState } from "react";
-import OuterCard from "./OuterCard";
+import OuterCard from "../components/OuterCard";
 import Carousel from "./Carousel";
+import "../App.css";
 
 export default function MultiplePanelCard({ title, panels = [] }) {
   const [expanded, setExpanded] = useState(null); // índice del panel expandido
@@ -34,15 +35,16 @@ export default function MultiplePanelCard({ title, panels = [] }) {
     });
   };
 
-const activeNav = expanded !== null ? (
-  <>
-    <button className="nav-btn" onClick={collapse} aria-label="Volver">
-      ← volver
-    </button>
-    {navs[expanded]}
-    <div />
-  </>
-) : null;
+  const activeNav =
+    expanded !== null ? (
+      <>
+        <button className="nav-btn" onClick={collapse} aria-label="Volver">
+          ← volver
+        </button>
+        {navs[expanded]}
+        <div />
+      </>
+    ) : null;
 
   return (
     <OuterCard title={title} navVisible={expanded !== null} nav={activeNav}>
