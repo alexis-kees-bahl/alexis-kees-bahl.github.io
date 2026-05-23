@@ -1,3 +1,39 @@
+.card {
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.6) 0% 15%,
+    rgba(255, 255, 255, 0.2) 30% 60%,
+    rgba(255, 255, 255, 0.6) 78% 78.5%,
+    rgba(255, 255, 255, 0.2) 88% 100%
+  );
+  box-shadow: inset -2px 4px 8px -2px rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+  width: 440px;
+  min-width: 300px;
+  max-width: 80%;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: -20px; /* más grande que la card para cubrir los bordes del blur */
+  background-image: url("./assets/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+background-attachment: fixed;
+  filter: blur(20px);
+  z-index: 0;
+}
+
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
 
 * {
   font-family: "JetBrains Mono", monospace;
@@ -39,7 +75,7 @@ body::before {
   background-size: cover;
   background-position: center;
 }
-
+/*
 .card {
   background: linear-gradient(
     150deg,
@@ -60,7 +96,7 @@ body::before {
   max-width: 80%;
 }
 
-
+*/
 
 
 h1,h2{
