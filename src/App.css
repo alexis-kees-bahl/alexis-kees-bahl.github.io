@@ -5,6 +5,20 @@
   border: none;
 }
 
+:root {
+isolation:auto;
+  background: transparent;
+}
+
+body {
+  margin: 0;
+  background: transparent;
+}
+
+html {
+  background: transparent;
+}
+
 main {
   width: 100%;
   padding: 3rem 1rem 0 1rem;
