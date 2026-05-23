@@ -59,10 +59,10 @@ a:hover{
 .card {
   background: linear-gradient(
     150deg,
-    rgba(255, 255, 255, 0.8) 0% 15%,
-    rgba(255, 255, 255, 0.5) 30% 60%,
-    rgba(255, 255, 255, 0.9) 78% 78.5%,
-    rgba(255, 255, 255, 0.5) 88% 100%
+    rgba(255, 255, 255, 0.9) 0% 15%,
+    rgba(255, 255, 255, 0.6) 30% 60%,
+    rgba(255, 255, 255, 1) 78% 78.5%,
+    rgba(255, 255, 255, 0.6) 88% 100%
   );
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(12px);
