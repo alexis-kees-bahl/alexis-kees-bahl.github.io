@@ -14,6 +14,7 @@ main {
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  background-image: url("./assets/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg");
 }
 
 h1,h2{
