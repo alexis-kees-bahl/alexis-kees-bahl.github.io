@@ -2,6 +2,7 @@
 * {
   font-family: "JetBrains Mono", monospace;
   box-sizing: border-box;
+  border: none;
 }
 
 main {
@@ -20,8 +21,27 @@ h1,h2{
   line-height: 115%;
 }
 
+h1 {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
 h2 {
   font-size: 16px;
+  color: #444;
+  font-weight: 200;
+  font-style: italic;
+}
+
+h3 {
+  white-space: pre-wrap;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  color: #42ba90;
 }
 
 a {
@@ -79,7 +99,7 @@ a:hover{
   align-items: center;
   padding: 1.25rem 1.5rem;
   position: relative;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .overlay {
@@ -103,15 +123,7 @@ a:hover{
   width: 100%;
   cursor: default;
 }
-.inner-card-content h3 {
-  white-space: pre-wrap;
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  margin: auto;
-  margin-bottom: 0.5rem;
-  color: #42ba90;
-}
+
 
 .inner-card-description {
   display: block;
@@ -139,7 +151,6 @@ a:hover{
   height: 1.5rem;
   overflow: hidden;
   opacity: 0;
-  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
   transition:
     height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -157,7 +168,6 @@ a:hover{
 
 .oc-header {
   padding: 1.25rem 1.5rem 0.75rem;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
 
@@ -169,7 +179,6 @@ a:hover{
 .nav-btn,
 .close-btn {
   background: rgba(0, 0, 0, 0.3);
-  border: none;
   border-radius: 6px;
   min-width: 2rem;
   height: 2rem;
@@ -255,7 +264,6 @@ transform: translateY(-180px);
 }
 
 .panel button {
-  border: 0.5px solid;
   border-radius: 8px;
   padding: 0.25rem 0.75rem;
   background: rgba(0, 0, 0, 0.2);
