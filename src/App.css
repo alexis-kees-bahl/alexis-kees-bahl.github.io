@@ -19,12 +19,12 @@
 .card::before {
   content: '';
   position: absolute;
-  inset: -20px; /* más grande que la card para cubrir los bordes del blur */
+  inset: -20px;
   background-image: url("./assets/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg");
   background-size: cover;
   background-position: center;
 background-attachment: fixed;
-  filter: blur(20px);
+  filter: blur(8px);
   z-index: 0;
 }
 
