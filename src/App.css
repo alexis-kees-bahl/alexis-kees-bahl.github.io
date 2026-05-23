@@ -110,7 +110,7 @@ a:hover{
   align-items: center;
   padding: 1.25rem 1.5rem;
   position: relative;
-  opacity: 0.8;
+  background-color: rgba(20, 20, 20, 0.8);
 }
 
 .overlay {
