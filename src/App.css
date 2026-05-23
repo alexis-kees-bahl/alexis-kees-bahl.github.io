@@ -15,14 +15,13 @@ main {
   justify-content: center;
 }
 
-h1{
-  color:#333
+h1,h2{
+  color:#333;
+  line-height: 115%;
 }
 
 h2 {
   font-size: 16px;
-  font-weight: 600;
-  color: #333;
 }
 
 a {
@@ -177,7 +176,6 @@ a:hover{
   padding: 0 8px;
   cursor: pointer;
   font-size: 18px;
-  font-family: "JetBrains Mono", monospace;
   font-weight: 100;
   display: flex;
   align-items: center;
@@ -191,8 +189,8 @@ a:hover{
   border-radius: 50%;
 }
 
-.nav-btn:hover:not(:disabled),
-.close-btn:hover {
+.nav-btn:active,
+.close-btn:active {
   background: rgba(0, 0, 0, 0.1);
 }
 .nav-btn:disabled {
