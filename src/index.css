@@ -52,9 +52,6 @@
 
 body {
   margin: 0;
-  background-image: url("./assets/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 #root {
