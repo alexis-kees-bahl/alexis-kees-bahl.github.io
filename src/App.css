@@ -75,7 +75,10 @@ body::before {
   background-image: url("./assets/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg");
   background-size: cover;
   background-position: center;
+background-attachment: fixed;
 }
+
+
 /*
 .card {
   background: linear-gradient(
