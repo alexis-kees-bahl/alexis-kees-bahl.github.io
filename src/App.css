@@ -92,7 +92,7 @@ main {
   left: 0;
   top: 0;
   background-color: transparent;
-  will-change:transform;
+  transform:translateZ(0);
 }
 
 .background-image {
