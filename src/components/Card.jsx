@@ -105,12 +105,11 @@ export default function Card({ title, items = [], items2 = null }) {
       <div
         className={`dual-panels${hasItems2 && showDualPanels === true ? "" : " dual-panels--hidden"}`}
       >
-        <div className="panel" style={{ background: "#b768fc" }}>
+        <div className="panel left-panel">
           <div className="overlay" />
           <div className="inner-card-content">
-            <h3 style={{ color: "#fffb8d", zIndex: 10 }}>Frontend</h3>
+            <h3>Frontend</h3>
             <button
-              style={{ color: "#1cc", zIndex: 10 }}
               onClick={() => {
                 setActiveSet(cards);
                 setShowDualPanels(false);
@@ -121,12 +120,11 @@ export default function Card({ title, items = [], items2 = null }) {
             </button>
           </div>
         </div>
-        <div className="panel" style={{ background: "#131415" }}>
+        <div className="panel right-panel">
           <div className="overlay" />
           <div className="inner-card-content">
-            <h3 style={{ color: "#42ba90", zIndex: 10 }}>Backend</h3>
+            <h3>Backend</h3>
             <button
-              style={{ color: "#999", zIndex: 100 }}
               onClick={() => {
                 setActiveSet(cards2);
                 setShowDualPanels(false);
@@ -166,8 +164,7 @@ export default function Card({ title, items = [], items2 = null }) {
   return (
     <div className="card outer-card">
       <div className="oc-header">
-        {items.length === 0 ?
-        (<h1>{title}</h1>) : (<h2>{title}</h2>)}
+        {items.length === 0 ? <h1>{title}</h1> : <h2>{title}</h2>}
       </div>
       <div
         className={`cards-viewer${items.length === 0 ? " cards-viewer--empty" : ""}`}

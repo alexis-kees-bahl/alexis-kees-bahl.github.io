@@ -1,6 +1,7 @@
 // App.jsx
 import "./App.css";
 import Card from "./components/Card";
+import greenHexa from "./assets/green-hexagons.jpg";
 
 const textoMultilinea = (
   <>
@@ -12,6 +13,14 @@ const textoMultilinea = (
     GitHub:{" "}
     <a href="https://github.com/alexis-kees-bahl" target="blank">
       github.com/alexis-kees-bahl
+    </a>
+    {"\n"}
+    CV en PDF:{" "}
+    <a
+      href="https://drive.google.com/file/d/1NFE8UHXJRUeDdaXa9-vPy-ovzVlmGI0Q/view?usp=sharing"
+      target="blank"
+    >
+      Curriculum Vitae
     </a>
   </>
 );
@@ -188,27 +197,41 @@ const habilidadesBlandas = [
 export default function App() {
   return (
     <>
-      <main>
-        <Card title="Curriculum Vitae" />
-        <Card
-          title="Datos y contacto"
-          items={datosPersonales}
-          titleColor="#333"
+      <picture className="background-image-container">
+        <source srcSet={greenHexa} type="image/avif" />
+        <img
+          className="background-image"
+          src={greenHexa}
+          alt="Fondo de pantalla"
         />
+      </picture>
+      <main>
+        <div className="cards-section">
+          <Card title="Curriculum Vitae" />
+          <Card
+            title="Datos y contacto"
+            items={datosPersonales}
+            titleColor="#333"
+          />
 
-        <Card title="Formación" items={formacion} />
+          <Card title="Formación" items={formacion} />
 
-        <Card title="Inglés" items={ingles} />
+          <Card title="Inglés" items={ingles} />
 
-        <Card title="Experiencia" items={experiencia} />
+          <Card title="Experiencia" items={experiencia} />
 
-        <Card title="Habilidades técnicas" items={frontend} items2={backend} />
+          <Card
+            title="Habilidades técnicas"
+            items={frontend}
+            items2={backend}
+          />
 
-        <Card title="Otras habilidades técnicas" items={otras} />
+          <Card title="Otras habilidades técnicas" items={otras} />
 
-        <Card title="Habilidades blandas" items={habilidadesBlandas} />
+          <Card title="Habilidades blandas" items={habilidadesBlandas} />
+        </div>
       </main>
-      <div className="footer">
+      <footer>
         <p>Alexis Kees Bahl - 2026 - All rights reserved</p>
         <p>
           <a href="https://iconscout.com/icons/profile" target="_blank">
@@ -219,7 +242,7 @@ export default function App() {
             Kudicon
           </a>
         </p>
-      </div>
+      </footer>
     </>
   );
 }
