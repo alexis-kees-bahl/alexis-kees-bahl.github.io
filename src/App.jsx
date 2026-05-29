@@ -74,7 +74,7 @@ datos, estructuras y funciones`,
     description: "Platzi, 2022",
   },
   { title: `Algoritmos y diagramas de flujo`, description: "Platzi, 2022" },
-  { title: `Licenciatura en Trabajo Social`, description: "UNLP - 2007-2013" },
+  { title: `Otros estudios`, description: "Licenciatura en Trabajo Social - UNLP - 2007-2013" },
 ];
 
 // array of objects that contaoins my English education
