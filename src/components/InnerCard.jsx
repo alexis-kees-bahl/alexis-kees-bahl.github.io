@@ -11,7 +11,7 @@ export default function InnerCard({
   bgColor = "#1f4760",
   txtColor = "#FFF",
   titleColor = "##0DFF99",
-  overlayColor = "rgba(0, 0, 0, 0.5)",
+  overlayColor = "",
 }) {
   return (
     <div className="inner-card" style={{ background: bgColor }}>

@@ -1,8 +1,8 @@
-// App.jsx
 import "./App.css";
 import Card from "./components/Card";
 import greenHexa from "./assets/green-hexagons.jpg";
 
+// text that will display on contact info card
 const textoMultilinea = (
   <>
     LinkedIn:{" "}
@@ -25,6 +25,8 @@ const textoMultilinea = (
   </>
 );
 
+
+// single object array that is passed to outer card to render personal data card
 const datosPersonales = [
   {
     title: "Alexis Kees Bahl",
@@ -36,6 +38,7 @@ const datosPersonales = [
   },
 ];
 
+//array of objects that contains Education info
 const formacion = [
   {
     title: `Tecnicatura Universitaria
@@ -74,6 +77,7 @@ datos, estructuras y funciones`,
   { title: `Licenciatura en Trabajo Social`, description: "UNLP - 2007-2013" },
 ];
 
+// array of objects that contaoins my English education
 const ingles = [
   {
     title: "Cerficate in Advanced English (C1)",
@@ -108,23 +112,22 @@ y Expresiones en Inglés`,
   },
 ];
 
+//array of objects that contains my working experience
 const experiencia = [
   {
     title: "Proyecto PSI",
     description:
-      "Proyecto en curso. Análisis de requisitos, identidad visual, estrategia de marketing",
-    bgColor: "#383858",
+      "Proyecto en curso. Análisis de requisitos, identidad visual, estrategia de marketing"
   },
   {
     title: "Laku indumentaria",
     description:
-      "Aplicación frontend con React. Análisis de requisitos, identidad visual, desarrollo de aplicación React",
-    bgColor: "#2d1b4e",
+      "Aplicación frontend con React. Análisis de requisitos, identidad visual, desarrollo de aplicación React"
+      
   },
   {
     title: "Aplicación backend Java+Spring+Hibernate",
-    description: "Proyecto en curso. Desarrollo de REST API con Java SE",
-    bgColor: "#0d2137",
+    description: "Proyecto en curso. Desarrollo de REST API con Java SE"
   },
   {
     title: "Aplicación de notas",
@@ -133,12 +136,14 @@ const experiencia = [
   },
 ];
 
+//array of objects that cotains my frontend-related technical skills
 const frontend = [
   { title: "HTML & CSS", description: "Semántico, responsive, animaciones" },
   { title: "JavaScript", description: "ES6+, async, DOM" },
   { title: "React", description: "Vite, hooks, states, effects, router" },
 ];
 
+//array of objects that cotains my backend-related technical skills
 const backend = [
   { title: "Java Spring Boot", description: "JPA, Hibernate, REST APIs" },
   {
@@ -149,6 +154,7 @@ const backend = [
   { title: "Amazon Web Services", description: "S3, Route 53, CloudFront" },
 ];
 
+//"others" array of objects
 const otras = [
   { title: "Control de versiones", description: "Git y GitHub" },
   {
@@ -166,6 +172,7 @@ const otras = [
   },
 ];
 
+//soft skills array
 const habilidadesBlandas = [
   {
     title: "Comunicación",
@@ -197,6 +204,7 @@ const habilidadesBlandas = [
 export default function App() {
   return (
     <>
+    {/* background image */}
       <picture className="background-image-container">
         <source srcSet={greenHexa} type="image/avif" />
         <img
@@ -205,8 +213,12 @@ export default function App() {
           alt="Fondo de pantalla"
         />
       </picture>
+
+      {/*
+      Main section containing Card components
+      with different parameters
+      that result in different kinds of cards */}
       <main>
-        <div className="cards-section">
           <Card title="Curriculum Vitae" />
           <Card
             title="Datos y contacto"
@@ -229,8 +241,10 @@ export default function App() {
           <Card title="Otras habilidades técnicas" items={otras} />
 
           <Card title="Habilidades blandas" items={habilidadesBlandas} />
-        </div>
+
       </main>
+
+      {/* footer showing rights and  */}
       <footer>
         <p>Alexis Kees Bahl - 2026 - All rights reserved</p>
         <p>
