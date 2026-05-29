@@ -80,7 +80,7 @@ datos, estructuras y funciones`,
 // array of objects that contaoins my English education
 const ingles = [
   {
-    title: "Cerficate in Advanced English (C1)",
+    title: "Certificate in Advanced English (C1)",
     description: "University of Cambridge, 2019",
   },
   { title: "Curso de Inglés para Programadores", description: "Platzi, 2022" },
