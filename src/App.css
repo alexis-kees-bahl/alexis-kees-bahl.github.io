@@ -87,6 +87,7 @@ main {
   position: fixed;
   display: block;
   height: 100lvh;
+  width: 100lvh;
   margin: 0;
   left: 0;
   top: 0;
