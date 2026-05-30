@@ -73,8 +73,7 @@ main {
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  position: relative;
-  z-index: 1;
+  z-index:10;
 }
 
 /*
@@ -89,6 +88,7 @@ main {
   left: 0;
   top: 0;
   background-color: transparent;
+  z-index:0;
 }
 
 .background-image {
@@ -111,10 +111,9 @@ footer {
     rgba(255, 255, 255, 0.3) 78% 78.5%,
     rgba(255, 255, 255, 0.1) 88% 100%
   );
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px)!important;
+  -webkit-backdrop-filter: blur(4px)!important;
   box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.8);
-
   overflow: hidden;
   position: relative;
   transition:
@@ -122,6 +121,7 @@ footer {
     transform 0.1s;
   width: 440px;
   min-width: 300px;
+  z-index:10;
 }
 
 .card {
