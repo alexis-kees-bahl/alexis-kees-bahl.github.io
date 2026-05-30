@@ -8,7 +8,6 @@
   --title-color: #b1e7f1;
 }
 
-
 /*
 --------------- GENERAL STYLES BY TYPE
 */
@@ -24,7 +23,6 @@ body {
   width: 100%;
   min-height: 100%;
 }
-
 
 h1,
 h2,
@@ -70,7 +68,7 @@ main {
   position: relative;
   min-height: 100vh;
   background-color: transparent;
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
@@ -78,7 +76,6 @@ main {
   position: relative;
   z-index: 1;
 }
-
 
 /*
 -------------------- BACKGROUND
@@ -92,6 +89,7 @@ main {
   left: 0;
   top: 0;
   background-color: transparent;
+  transform: translateZ(0);
 }
 
 .background-image {
@@ -100,7 +98,6 @@ main {
   object-fit: cover;
   object-position: center;
 }
-
 
 /*
 -----------------GENERAL STYLES FOR ALL CARDS
@@ -115,8 +112,8 @@ footer {
     rgba(255, 255, 255, 0.3) 78% 78.5%,
     rgba(255, 255, 255, 0.1) 88% 100%
   );
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.8);
 
   overflow: hidden;
@@ -126,13 +123,14 @@ footer {
     transform 0.1s;
   width: 440px;
   min-width: 300px;
+  transform: translateZ(0);
+  isolation: isolate;
 }
 
 .card {
   border-radius: 12px;
   max-width: 80%;
 }
-
 
 .card:hover {
   box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);
@@ -221,12 +219,9 @@ footer {
   height: 0;
 }
 
-
-
-
 /*
 ----------------- GENERAL STYLES FOR ALL INNER CARDS
-*/ 
+*/
 
 .inner-card,
 .panel {
@@ -282,7 +277,6 @@ footer {
 ----------------- STYLES FOR CAROUSEL
 */
 
-
 .carousel-nav {
   display: flex;
   align-items: center;
@@ -313,11 +307,9 @@ footer {
   background: rgba(255, 255, 255, 1);
 }
 
-
 /*
 ----------------- DUAL PANEL CARDS
 */
-
 
 .dual-panels {
   position: absolute;
