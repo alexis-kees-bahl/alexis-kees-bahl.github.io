@@ -17,7 +17,7 @@ const textoMultilinea = (
     {"\n"}
     CV en PDF:{" "}
     <a
-      href="https://drive.google.com/file/d/1NFE8UHXJRUeDdaXa9-vPy-ovzVlmGI0Q/view?usp=sharing"
+      href="https://drive.google.com/file/d/1ZlxLALoB3A332-losajQESJ-gOkrsnQ4/view?usp=drivesdk"
       target="blank"
     >
       Curriculum Vitae
