@@ -66,7 +66,7 @@ a:hover {
 
 main {
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -83,13 +83,12 @@ main {
 .background-image-container {
   position: fixed;
   display: block;
-  height: 100lvh;
+  height: 100%;
   width: 100%;
   margin: 0;
   left: 0;
   top: 0;
   background-color: transparent;
-  transform: translateZ(0);
 }
 
 .background-image {
@@ -123,8 +122,6 @@ footer {
     transform 0.1s;
   width: 440px;
   min-width: 300px;
-  transform: translateZ(0);
-  isolation: isolate;
 }
 
 .card {
