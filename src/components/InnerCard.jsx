@@ -10,7 +10,7 @@ export default function InnerCard({
   description,
   bgColor = "#1f4760",
   txtColor = "#FFF",
-  titleColor = "##0DFF99",
+  titleColor = "##b1e7f1",
   overlayColor = "",
 }) {
   return (

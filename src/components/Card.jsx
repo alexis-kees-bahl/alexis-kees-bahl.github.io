@@ -170,7 +170,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
 
   return (
     <div className="card outer-card">
-      <div className="oc-header">
+      <div className="card-header">
         {items.length === 0 ? <h1>{title}</h1> : <h2>{title}</h2>}
       </div>
       <div
@@ -184,7 +184,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
         )}
       </div>
       <div
-        className={`oc-nav${activeSet && activeSet.length > 1 && !showDualPanels ? " oc-nav--visible" : ""}`}
+        className={`card-nav${activeSet && activeSet.length > 1 && !showDualPanels ? " card-nav--visible" : ""}`}
       >
         {RenderNav()}
       </div>
