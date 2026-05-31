@@ -8,8 +8,15 @@ import { useEffect } from "react";
 import InnerCard from "./InnerCard";
 import "../App.css";
 
-export default function Card({ title, items = [], items2 = null }) {
-  const [current, setCurrent] = useState(0);
+/*Card cant will render diffenrently based on parameters it gets:
+1) one array containing only one element → single card shown, no nav bar
+2) one array with +1 elements → a carousel of cards, with navigation bar
+3) two arrays (items, items2) → dual panel card
+*/
+
+
+export default function Card({ title, items = [], items2 = null, firstPanelTitle = null, secondPanelTitle = null }) {
+  const [current, setCurrent] = useState(0); // used to position 
   const [cards, setCards] = useState(items);
   const [cards2, setCards2] = useState(items2);
   const [activeSet, setActiveSet] = useState(cards);
@@ -108,7 +115,7 @@ export default function Card({ title, items = [], items2 = null }) {
         <div className="panel left-panel">
           <div className="overlay" />
           <div className="inner-card-content">
-            <h3>Frontend</h3>
+            <h3>{firstPanelTitle !== null ? firstPanelTitle : "No title"}</h3>
             <button
               onClick={() => {
                 setActiveSet(cards);
@@ -123,7 +130,7 @@ export default function Card({ title, items = [], items2 = null }) {
         <div className="panel right-panel">
           <div className="overlay" />
           <div className="inner-card-content">
-            <h3>Backend</h3>
+            <h3>{secondPanelTitle !== null ? secondPanelTitle : "No title"}</h3>
             <button
               onClick={() => {
                 setActiveSet(cards2);
