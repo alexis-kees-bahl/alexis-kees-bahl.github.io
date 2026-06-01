@@ -124,6 +124,7 @@ export const experiencia = [
   },
 ];
 
+//array of objects that contains coding proyects and excercises
 export const proyectos = [
   {
     title: "Aplicación backend Java+Spring+Hibernate",
@@ -135,6 +136,11 @@ export const proyectos = [
     description:
       "Primer proyecto con Java, base de la API construida posteriormente con Hibernate",
     link: "https://github.com/alexis-kees-bahl/DWContentRandomizer_springboot",
+  },
+  {
+    title: "Servidor con Node.js",
+    description: "Elaboración propia para asignatura 'Diseño web full stack'",
+    link: "https://github.com/alexis-kees-bahl/full-stack-TUDDAM",
   },
   {
     title: "Aplicación de notas",
