@@ -6,6 +6,9 @@ either a carousel or a double panel, depending on the props we pass to it.
 import { useState } from "react";
 import { useEffect } from "react";
 import InnerCard from "./InnerCard";
+import Left from "../assets/arrow-left.svg"
+import Right from "../assets/arrow-right.svg"
+import Close from "../assets/close.svg"
 import "../App.css";
 
 /*Card cant will render diffenrently based on parameters it gets:
@@ -50,7 +53,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
               disabled={current === 0}
               aria-label="Anterior"
             >
-              ←
+              <img src={Left}/>
             </button>
 
             <button
@@ -60,7 +63,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
                 setCurrent(0);
               }}
             >
-              X
+              <img src={Close}/>
             </button>
 
             <button
@@ -69,7 +72,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
               disabled={current === activeSet.length - 1}
               aria-label="Siguiente"
             >
-              →
+              <img src={Right}/>
             </button>
           </>
         )}
@@ -81,7 +84,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
               disabled={current === 0}
               aria-label="Anterior"
             >
-              ←
+              <img src={Left}/>
             </button>
 
             <div className="carousel__nav-dots">
@@ -99,7 +102,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
               disabled={current === activeSet.length - 1}
               aria-label="Siguiente"
             >
-              →
+              <img src={Right}/>
             </button>
           </>
         )}

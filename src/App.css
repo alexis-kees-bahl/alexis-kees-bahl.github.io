@@ -32,20 +32,20 @@ h3 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 2.5rem;
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 200;
   font-style: italic;
 }
 
 h3 {
   white-space: pre-wrap;
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
   margin: auto;
@@ -173,11 +173,11 @@ footer {
 .carousel__nav-close-btn {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 6px;
-  min-width: 2rem;
+  width: 2rem;
   height: 2rem;
-  padding: 0 8px;
+  padding: 0.5rem;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.5rem;
   font-weight: 100;
   display: flex;
   align-items: center;
@@ -186,11 +186,18 @@ footer {
   transition: background 0.15s;
 }
 
+.carousel__nav-btn img,
+.carousel__nav-close-btn img {
+  height: 70%;
+  width: 70%;
+}
+
 
 /* specific syles for close btn to make it round and larger font*/
-.nav__close-btn {
-  font-size: 14px;
+.carousel__nav-close-btn {
+  font-size: 1rem;
   border-radius: 50%;
+  line-height: 1;
 }
 
 .nav__btn:active,
@@ -200,10 +207,6 @@ footer {
 .nav__btn:disabled {
   opacity: 0.3;
   cursor: default;
-}
-.nav__counter {
-  font-size: 12px;
-  color: #888;
 }
 
 .card__viewer {
@@ -270,14 +273,15 @@ footer {
 
 .inner-card__content p {
   white-space: pre-wrap;
-  font-size: 14px;
+  font-size: 0.9rem;
   line-height: 1.5;
   width: 100%;
 }
 
 .small-link {
-  font-size: 14px;
-  margin-top: 8px;;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color:var(--light-blue);
 }
 
 /*
@@ -353,21 +357,18 @@ footer {
   max-width: 50%;
 }
 
-.panel h2 {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  font-size: 20px;
-}
-
 .panel button {
   border-radius: 8px;
   padding: 0.25rem 0.75rem;
-  background: rgba(0, 0, 0, 0.2);
+  border: 0.5px solid var(--title-color);
+  background-color: transparent;
   color: var(--title-color);
+  transition: transform 0.1s ease-in;
 }
 
 .panel button:hover {
   background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.0);
 }
 
 .panel button:active,
@@ -379,7 +380,7 @@ footer {
   background-color: var(--light-green);
 }
 
-.left-panel h3 {
+.panel h3 {
   color: var(--title-color);
 }
 
