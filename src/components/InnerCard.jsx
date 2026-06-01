@@ -8,9 +8,9 @@ import "../App.css";
 export default function InnerCard({
   title = null,
   description,
-  bgColor = "#1f4760",
+  bgColor = null,
   txtColor = "#FFF",
-  titleColor = "##b1e7f1",
+  titleColor = null,
   overlayColor = "",
 }) {
   return (

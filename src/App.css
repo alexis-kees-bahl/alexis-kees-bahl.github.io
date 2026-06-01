@@ -237,6 +237,7 @@ footer {
   padding: 1.25rem 1.5rem;
   position: relative;
   background-color: var(--dark-green);
+  transition: transform 0.1s ease-in;
 }
 
 .overlay {
@@ -335,8 +336,10 @@ footer {
 .set-of-cards {
   position: relative;
   display: flex;
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
+
+
 
 /*
 ----------------- DUAL PANEL CARDS - individual panels

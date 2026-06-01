@@ -180,7 +180,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
         {items.length === 0 ? (
           <div style={{ height: "0" }} />
         ) : (
-          <RenderSetOfCards />
+          RenderSetOfCards()
         )}
       </div>
       <div
