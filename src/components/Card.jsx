@@ -41,11 +41,11 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
 
   const RenderNav = () => {
     return (
-      <nav className="carousel-nav">
+      <nav className="carousel__nav">
         {hasItems2 && !showDualPanels && (
           <>
             <button
-              className="nav-btn"
+              className="carousel__nav-btn"
               onClick={() => go(current - 1)}
               disabled={current === 0}
               aria-label="Anterior"
@@ -54,7 +54,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
             </button>
 
             <button
-              className="close-btn"
+              className="carousel__nav-close-btn"
               onClick={() => {
                 setShowDualPanels(true);
                 setCurrent(0);
@@ -64,7 +64,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
             </button>
 
             <button
-              className="nav-btn"
+              className="carousel__nav-btn"
               onClick={() => go(current + 1)}
               disabled={current === activeSet.length - 1}
               aria-label="Siguiente"
@@ -76,7 +76,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
         {!hasItems2 && (
           <>
             <button
-              className="nav-btn"
+              className="carousel__nav-btn"
               onClick={() => go(current - 1)}
               disabled={current === 0}
               aria-label="Anterior"
@@ -84,17 +84,17 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
               ←
             </button>
 
-            <div className="carousel-nav-dots">
+            <div className="carousel__nav-dots">
               {activeSet.map((_, i) => (
                 <span
                   key={i}
-                  className={`carousel-nav-dot${i === current ? " active" : ""}`}
+                  className={`carousel__nav-dot${i === current ? " active" : ""}`}
                 />
               ))}
             </div>
 
             <button
-              className="nav-btn"
+              className="carousel__nav-btn"
               onClick={() => go(current + 1)}
               disabled={current === activeSet.length - 1}
               aria-label="Siguiente"
@@ -114,7 +114,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
       >
         <div className="panel left-panel">
           <div className="overlay" />
-          <div className="inner-card-content">
+          <div className="inner-card__content">
             <h3>{firstPanelTitle !== null ? firstPanelTitle : "No title"}</h3>
             <button
               onClick={() => {
@@ -129,7 +129,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
         </div>
         <div className="panel right-panel">
           <div className="overlay" />
-          <div className="inner-card-content">
+          <div className="inner-card__content">
             <h3>{secondPanelTitle !== null ? secondPanelTitle : "No title"}</h3>
             <button
               onClick={() => {
@@ -170,12 +170,12 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
   };
 
   return (
-    <div className="card outer-card">
-      <div className="card-header">
+    <div className="card">
+      <div className="card__header">
         {items.length === 0 ? <h1>{title}</h1> : <h2>{title}</h2>}
       </div>
       <div
-        className={`cards-viewer${items.length === 0 ? " cards-viewer--empty" : ""}`}
+        className={`card__viewer${items.length === 0 ? " card__viewer--empty" : ""}`}
       >
         {RenderDualPanel()}
         {items.length === 0 ? (
@@ -185,7 +185,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
         )}
       </div>
       <div
-        className={`card-nav${activeSet && activeSet.length > 1 && !showDualPanels ? " card-nav--visible" : ""}`}
+        className={`card__nav${activeSet && activeSet.length > 1 && !showDualPanels ? " card__nav--visible" : ""}`}
       >
         {RenderNav()}
       </div>

@@ -18,9 +18,9 @@ export default function InnerCard({
     <div className="inner-card" style={{ background: bgColor }}>
       <div className="overlay" style={{ background: overlayColor }} />
 
-      <div className="inner-card-content">
+      <div className="inner-card__content">
         {title && <h3 style={{ color: titleColor }}>{title}</h3>}
-        <p className="inner-card-description" style={{ color: txtColor }}>
+        <p className="inner-card__description" style={{ color: txtColor }}>
           {description}
         </p>
         {link && <a className="small-link" target="_blank" href={link}>{link}</a>}

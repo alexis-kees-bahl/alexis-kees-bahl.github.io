@@ -123,6 +123,9 @@ footer {
   width: 440px;
   min-width: 300px;
   z-index:10;
+    display: flex;
+  flex-direction: column;
+
 }
 
 .card {
@@ -139,7 +142,7 @@ footer {
 /*
 ----------------- CARD NAV STYLES 
 */
-.card-nav {
+.card__nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -152,17 +155,13 @@ footer {
     opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card-nav--visible {
+.card__nav--visible {
   height: 4rem;
   opacity: 1;
 }
 
-.outer-card {
-  display: flex;
-  flex-direction: column;
-}
 
-.card-header {
+.card__header {
   padding: 1.25rem 1.5rem 0.75rem;
   flex-shrink: 0;
 }
@@ -170,8 +169,8 @@ footer {
 /*
 -------------------- this styles also apply to "close" btn in Dual Panel Card
 */
-.nav-btn, 
-.close-btn {
+.carousel__nav-btn, 
+.carousel__nav-close-btn {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 6px;
   min-width: 2rem;
@@ -189,25 +188,25 @@ footer {
 
 
 /* specific syles for close btn to make it round and larger font*/
-.close-btn {
+.nav__close-btn {
   font-size: 14px;
   border-radius: 50%;
 }
 
-.nav-btn:active,
+.nav__btn:active,
 .close-btn:active {
   background: rgba(0, 0, 0, 0.1);
 }
-.nav-btn:disabled {
+.nav__btn:disabled {
   opacity: 0.3;
   cursor: default;
 }
-.nav-counter {
+.nav__counter {
   font-size: 12px;
   color: #888;
 }
 
-.cards-viewer {
+.card__viewer {
   background-color: rgba(20, 20, 20, 0.01);
   overflow: hidden;
   width: 100%;
@@ -216,7 +215,7 @@ footer {
   height: 180px;
 }
 
-.cards-viewer--empty {
+.card__viewer--empty {
   visibility: hidden;
   height: 0;
 }
@@ -250,7 +249,7 @@ footer {
   );
 }
 
-.inner-card-content {
+.inner-card__content {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -262,14 +261,14 @@ footer {
   cursor: default;
 }
 
-.inner-card-description {
+.inner-card__description {
   display: block;
   margin: auto;
   width: 100%;
   text-align: center;
 }
 
-.inner-card-content p {
+.inner-card__content p {
   white-space: pre-wrap;
   font-size: 14px;
   line-height: 1.5;
@@ -285,7 +284,7 @@ footer {
 ----------------- STYLES FOR CAROUSEL
 */
 
-.carousel-nav {
+.carousel__nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -293,7 +292,7 @@ footer {
   padding: 1rem;
 }
 
-.carousel-nav-dots {
+.carousel__nav-dots {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -303,7 +302,7 @@ footer {
   gap: 5px;
   z-index: 2;
 }
-.carousel-nav-dot {
+.carousel__nav-dot {
   display: block;
   width: 6px;
   height: 6px;
@@ -311,7 +310,7 @@ footer {
   background: rgba(0, 0, 0, 0.35);
   transition: background 0.2s;
 }
-.carousel-nav-dot.active {
+.carousel__nav-dot.active {
   background: rgba(255, 255, 255, 1);
 }
 
