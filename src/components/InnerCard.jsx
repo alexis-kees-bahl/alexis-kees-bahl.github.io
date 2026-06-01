@@ -24,7 +24,7 @@ export default function InnerCard({
           {description}
         </p>
         {link && 
-        <a className="small-link" target="_blank" href={link}><button className="inner-card__panel-button">Link</button></a>}
+        <a className="small-link" target="_blank" href={link}><button className="inner-card__panel-button">Repositorio</button></a>}
       </div>
     </div>
   );
