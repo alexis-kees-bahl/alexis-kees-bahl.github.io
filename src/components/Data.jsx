@@ -144,7 +144,7 @@ export const proyectos = [
     link: "https://github.com/MarianoGonnet/TiendaLaku"
   },
   {title: "Mokepon - mockup game",
-    description: "Creado con HTML, CSS y JS como parte de curso de programación básica en Platzi. Código customizado para mejorar rendimiento y escalabilidad.",
+    description: "Proyecto HTML, CSS y JS hecho en curso de Platzi. Código customizado para mejorar rendimiento y escalabilidad.",
     link: "https://github.com/alexis-kees-bahl/mokepon-para-Platzi",
   }
 ];
