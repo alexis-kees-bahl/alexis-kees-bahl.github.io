@@ -200,11 +200,11 @@ footer {
   line-height: 1;
 }
 
-.nav__btn:active,
-.close-btn:active {
+.carousel__nav-btn:active,
+.carousel__nav-close-btn:active {
   background: rgba(0, 0, 0, 0.1);
 }
-.nav__btn:disabled {
+.carousel__nav-btn:disabled {
   opacity: 0.3;
   cursor: default;
 }
