@@ -357,7 +357,8 @@ footer {
   max-width: 50%;
 }
 
-.panel button {
+.inner-card__panel-button {
+  margin-top: 0.3rem;
   border-radius: 8px;
   padding: 0.25rem 0.75rem;
   border: 0.5px solid var(--title-color);

@@ -145,7 +145,7 @@ export const proyectos = [
   {
     title: "Aplicación de notas",
     description:
-      "Aplicación de notas personales con filtros y consulta a base de datos, realizada como ejercicio para postulación laboral",
+      "Aplicación de notas realizada para postulación laboral",
     link: "https://github.com/alexis-kees-bahl/notesapp",
   },
   {
@@ -156,7 +156,7 @@ export const proyectos = [
   {
     title: "Mokepon - mockup game",
     description:
-      "Proyecto HTML, CSS y JS hecho en curso de Platzi. Código customizado para mejorar rendimiento y escalabilidad.",
+      "Proyecto HTML, CSS y JS hecho en curso de Platzi. Código propio.",
     link: "https://github.com/alexis-kees-bahl/mokepon-para-Platzi",
   },
 ];

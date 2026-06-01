@@ -23,7 +23,8 @@ export default function InnerCard({
         <p className="inner-card__description" style={{ color: txtColor }}>
           {description}
         </p>
-        {link && <a className="small-link" target="_blank" href={link}>{link}</a>}
+        {link && 
+        <a className="small-link" target="_blank" href={link}><button className="inner-card__panel-button">Link</button></a>}
       </div>
     </div>
   );

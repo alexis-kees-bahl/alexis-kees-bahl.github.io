@@ -119,7 +119,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
           <div className="overlay" />
           <div className="inner-card__content">
             <h3>{firstPanelTitle !== null ? firstPanelTitle : "No title"}</h3>
-            <button
+            <button className="inner-card__panel-button"
               onClick={() => {
                 setActiveSet(cards);
                 setShowDualPanels(false);
@@ -134,7 +134,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
           <div className="overlay" />
           <div className="inner-card__content">
             <h3>{secondPanelTitle !== null ? secondPanelTitle : "No title"}</h3>
-            <button
+            <button className="inner-card__panel-button"
               onClick={() => {
                 setActiveSet(cards2);
                 setShowDualPanels(false);
