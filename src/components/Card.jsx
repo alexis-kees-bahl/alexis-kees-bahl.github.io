@@ -126,7 +126,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
                 setCurrent(0);
               }}
             >
-              View details
+              Ver detalles
             </button>
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
                 setCurrent(0);
               }}
             >
-              View details{" "}
+              Ver detalles{" "}
             </button>
           </div>
         </div>
