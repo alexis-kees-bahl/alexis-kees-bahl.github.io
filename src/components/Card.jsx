@@ -157,6 +157,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
             key={card.id || index}
             title={card.title}
             description={card.description}
+            link={card.link}
             bgColor={card.bgColor}
             txtColor={card.txtColor}
             titleColor={card.titleColor}

@@ -1,13 +1,23 @@
 import "./App.css";
 import Card from "./components/Card";
 import greenHexa from "./assets/green-hexagons.jpg";
-import {textoMultilinea, datosPersonales, formacion, ingles, experiencia, frontend, backend, otras, habilidadesBlandas} from "./components/Data"
-
+import {
+  textoMultilinea,
+  datosPersonales,
+  formacion,
+  ingles,
+  experiencia,
+  proyectos,
+  frontend,
+  backend,
+  otras,
+  habilidadesBlandas,
+} from "./components/Data";
 
 export default function App() {
   return (
     <>
-    {/* background image */}
+      {/* background image */}
       <picture className="background-image-container">
         <source srcSet={greenHexa} type="image/avif" />
         <img
@@ -22,33 +32,33 @@ export default function App() {
       with different parameters
       that result in different kinds of cards */}
       <main>
-          <Card title="Curriculum Vitae" />
-          <Card
-            title="Datos y contacto"
-            items={datosPersonales}
-            titleColor="#333"
-          />
+        <Card title="Curriculum Vitae" />
+        <Card
+          title="Datos y contacto"
+          items={datosPersonales}
+          titleColor="#333"
+        />
 
-          <Card title="Formación" items={formacion} />
+        <Card title="Formación" items={formacion} />
 
-          <Card title="Inglés" items={ingles} />
+        <Card
+          title="Habilidades técnicas"
+          items={frontend}
+          //Optional elements to render a DualPanel Card
+          items2={backend}
+          firstPanelTitle="Frontend"
+          secondPanelTitle="Backend"
+        />
 
-          <Card title="Experiencia" items={experiencia} />
+        <Card title="Otras habilidades técnicas" items={otras} />
 
-          <Card
-            title="Habilidades técnicas"
-            items={frontend}
+        <Card title="Experiencia" items={experiencia} />
 
-            //Optional elements to render a DualPanel Card
-            items2={backend}
-            firstPanelTitle="Frontend"
-            secondPanelTitle="Backend"
-          />
+        <Card title="Proyectos" items={proyectos} />
 
-          <Card title="Otras habilidades técnicas" items={otras} />
+        <Card title="Inglés" items={ingles} />
 
-          <Card title="Habilidades blandas" items={habilidadesBlandas} />
-
+        <Card title="Habilidades blandas" items={habilidadesBlandas} />
       </main>
 
       {/* footer showing rights and  */}

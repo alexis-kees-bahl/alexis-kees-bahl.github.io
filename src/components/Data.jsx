@@ -39,9 +39,9 @@ export const formacion = [
     title: `Tecnicatura Universitaria
 en Diseño y Desarrollo
 de Aplicaciones Multiplataforma`,
-    description: "UNNOBA - 2022-2025",
+    description: "UNNOBA - 2022-2025"
   },
-  { title: "Univesidad Java", description: "Ing. Ubaldo Acosta - Udemy 2025" },
+  { title: "Univesidad Java", description: "Ing. Ubaldo Acosta - Udemy 2025"},
   {
     title: "Curso de Srping y React",
     description: "Ing. Ubaldo Acosta - Udemy 2025",
@@ -120,15 +120,33 @@ export const experiencia = [
       "Aplicación frontend con React. Análisis de requisitos, identidad visual, desarrollo de aplicación React"
       
   },
+  
+];
+
+export const proyectos = [
   {
     title: "Aplicación backend Java+Spring+Hibernate",
-    description: "Proyecto en curso. Desarrollo de REST API con Java SE"
+    description: "Proyecto en curso. Desarrollo de REST API con Java SE",
+    link: "https://github.com/alexis-kees-bahl/DW_API/tree/main",
+  },
+  {title: "Aplicación CLI offline con Java+Springboot",
+    description: "Primer proyecto con Java, base de la API construida posteriormente con Hibernate",
+    link: "https://github.com/alexis-kees-bahl/DWContentRandomizer_springboot"
   },
   {
     title: "Aplicación de notas",
     description:
       "Aplicación de notas personales con filtros y consulta a base de datos, realizada como ejercicio para postulación laboral",
+      link: "https://github.com/alexis-kees-bahl/notesapp"
   },
+  {title: "Tienda Laku",
+    description: "Sitio web estático donde fui colaborador.",
+    link: "https://github.com/MarianoGonnet/TiendaLaku"
+  },
+  {title: "Mokepon - mockup game",
+    description: "Creado con HTML, CSS y JS como parte de curso de programación básica en Platzi. Código customizado para mejorar rendimiento y escalabilidad.",
+    link: "https://github.com/alexis-kees-bahl/mokepon-para-Platzi",
+  }
 ];
 
 //array of objects that cotains my frontend-related technical skills

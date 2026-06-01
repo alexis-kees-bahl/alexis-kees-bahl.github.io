@@ -8,6 +8,7 @@ import "../App.css";
 export default function InnerCard({
   title = null,
   description,
+  link=null,
   bgColor = null,
   txtColor = "#FFF",
   titleColor = null,
@@ -22,6 +23,7 @@ export default function InnerCard({
         <p className="inner-card-description" style={{ color: txtColor }}>
           {description}
         </p>
+        {link && <a className="small-link" target="_blank" href={link}>{link}</a>}
       </div>
     </div>
   );

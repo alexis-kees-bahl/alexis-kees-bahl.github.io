@@ -276,6 +276,11 @@ footer {
   width: 100%;
 }
 
+.small-link {
+  font-size: 16px;
+  margin-top: 8px;;
+}
+
 /*
 ----------------- STYLES FOR CAROUSEL
 */
