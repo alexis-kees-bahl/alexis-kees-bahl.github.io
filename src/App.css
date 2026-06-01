@@ -381,9 +381,6 @@ footer {
   background-color: var(--light-green);
 }
 
-.panel h3 {
-  color: var(--title-color);
-}
 
 .right-panel {
   background-color: var(--dark-green);
