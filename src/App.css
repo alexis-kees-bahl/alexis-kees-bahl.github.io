@@ -110,8 +110,7 @@ footer {
     150deg,
     rgba(255, 255, 255, 0.3) 0% 15%,
     rgba(255, 255, 255, 0.1) 30% 60%,
-    rgba(255, 255, 255, 0.3) 78% 78.5%,
-    rgba(255, 255, 255, 0.1) 88% 100%
+    rgba(255, 255, 255, 0.3) 78% 100%
   );
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
