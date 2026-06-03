@@ -41,18 +41,19 @@ export default function App() {
 
         <Card title="Formación" items={formacion} />
 
-        <Card title="Proyectos" items={proyectos} />
-
-        <Card title="Experiencia" items={experiencia} />
-
         <Card
-          title="Habilidades técnicas"
+           title="Habilidades técnicas"
           items={frontend}
           //Optional elements to render a DualPanel Card
           items2={backend}
           firstPanelTitle="Frontend"
           secondPanelTitle="Backend"
         />
+
+        <Card title="Proyectos" items={proyectos} />
+
+        <Card title="Experiencia" items={experiencia} />
+
 
         <Card title="Otras habilidades técnicas" items={otras} />
 
