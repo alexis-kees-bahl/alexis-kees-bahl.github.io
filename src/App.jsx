@@ -41,6 +41,10 @@ export default function App() {
 
         <Card title="Formación" items={formacion} />
 
+        <Card title="Proyectos" items={proyectos} />
+
+        <Card title="Experiencia" items={experiencia} />
+
         <Card
           title="Habilidades técnicas"
           items={frontend}
@@ -52,10 +56,7 @@ export default function App() {
 
         <Card title="Otras habilidades técnicas" items={otras} />
 
-        <Card title="Experiencia" items={experiencia} />
-
-        <Card title="Proyectos" items={proyectos} />
-
+        
         <Card title="Inglés" items={ingles} />
 
         <Card title="Habilidades blandas" items={habilidadesBlandas} />
