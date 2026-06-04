@@ -11,7 +11,7 @@ export const textoMultilinea = (
       github.com/alexis-kees-bahl
     </a>
     {"\n"}
-    CV en PDF:{" "}
+    CV (PDF):{" "}
     <a
       href="https://drive.google.com/file/d/1NFE8UHXJRUeDdaXa9-vPy-ovzVlmGI0Q/view?usp=sharing"
       target="blank"
@@ -24,7 +24,6 @@ export const textoMultilinea = (
 // single object array that is passed to outer card to render personal data card
 export const datosPersonales = [
   {
-    title: "Alexis Kees Bahl",
     description: textoMultilinea,
     bgColor: "rgba(255, 255, 255, 0.6)",
     txtColor: "#333",

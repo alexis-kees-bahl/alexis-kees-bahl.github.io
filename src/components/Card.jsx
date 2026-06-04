@@ -18,7 +18,7 @@ import "../App.css";
 */
 
 
-export default function Card({ title, items = [], items2 = null, firstPanelTitle = null, secondPanelTitle = null }) {
+export default function Card({ title, items = [], items2 = null, firstPanelTitle = null, secondPanelTitle = null, english}) {
   const [current, setCurrent] = useState(0); // used to position 
   const [cards, setCards] = useState(items);
   const [cards2, setCards2] = useState(items2);
@@ -51,7 +51,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
               className="carousel__nav-btn"
               onClick={() => go(current - 1)}
               disabled={current === 0}
-              aria-label="Anterior"
+              aria-label={english ? "Previous" : "Anterior"}
             >
               <img src={Left}/>
             </button>
@@ -70,7 +70,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
               className="carousel__nav-btn"
               onClick={() => go(current + 1)}
               disabled={current === activeSet.length - 1}
-              aria-label="Siguiente"
+              aria-label={english ? "Next" : "Siguiente"}
             >
               <img src={Right}/>
             </button>
@@ -82,7 +82,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
               className="carousel__nav-btn"
               onClick={() => go(current - 1)}
               disabled={current === 0}
-              aria-label="Anterior"
+              aria-label={english ? "Previous" : "Anterior"}
             >
               <img src={Left}/>
             </button>
@@ -100,7 +100,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
               className="carousel__nav-btn"
               onClick={() => go(current + 1)}
               disabled={current === activeSet.length - 1}
-              aria-label="Siguiente"
+              aria-label={english ? "Next" : "Siguiente"}
             >
               <img src={Right}/>
             </button>
@@ -125,8 +125,9 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
                 setShowDualPanels(false);
                 setCurrent(0);
               }}
+              aria-label={english ? "View details" : "Ver detalles"}
             >
-              View details
+              {english ? "View details" : "Ver detalles"}
             </button>
           </div>
         </div>
@@ -140,8 +141,9 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
                 setShowDualPanels(false);
                 setCurrent(0);
               }}
+              aria-label={english ? "View details" : "Ver detalles"}
             >
-              View details{" "}
+              {english ? "View details" : "Ver detalles"}
             </button>
           </div>
         </div>

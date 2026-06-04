@@ -6,11 +6,16 @@
   --light-green: #298fa3;
   --light-blue: #34c4e0;
   --title-color: #b1e7f1;
+      --header: #8bd5e0d5;
 }
 
 /*
 --------------- GENERAL STYLES BY TYPE
 */
+
+#root {
+  min-height: 100lvh;
+}
 * {
   font-family: "JetBrains Mono", monospace;
   box-sizing: border-box;
@@ -35,6 +40,7 @@ h1 {
   font-size: 2.5rem;
   font-weight: 300;
   margin-bottom: 1rem;
+  margin: 0;
 }
 
 h2 {
@@ -66,16 +72,36 @@ a:hover {
 
 main {
   position: relative;
-  height:100%;
+  height: 100%;
   min-height: 100lvh;
-  width:100%;
+  width: 100%;
   background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  z-index:10;
+  z-index: 10;
+}
+
+header {
+  background:var(--header);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 0 4px 1px var(--dark-green);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition:
+    box-shadow 0.1s,
+    transform 0.1s;
 }
 
 /*
@@ -90,7 +116,7 @@ main {
   left: 0;
   top: 0;
   background-color: transparent;
-  z-index:0;
+  z-index: 0;
 }
 
 .background-image {
@@ -98,6 +124,68 @@ main {
   width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+/*
+----------------- NAV
+*/
+
+header img {
+  height: 2rem;
+  width: 2rem;
+}
+
+header h2 {
+  font-size: 1.2rem;
+  color: var(--dark-green)
+  
+}
+
+.language-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  right:0;
+  bottom: 60px;
+  width: 50px;
+  height: 80px;
+  background-color: var(--title-color);
+  border-radius: 8px 0 0 8px;
+    z-index: 100;
+}
+
+.language-tab__slider {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 40px;
+  width: 24px;
+  border-radius: 15px;
+  background-color: var(--dark-green);
+  cursor: pointer;
+
+}
+
+.language-tab__slider-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--dark-green);
+  position: relative;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: var(--title-color);
+  transition: transform 0.2s ease-in;
+
+}
+
+.language-slider__button-eng {
+  transform: translateY(16px);
+
 }
 
 /*
@@ -116,28 +204,26 @@ footer {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.8);
-  position: relative;
   transition:
     box-shadow 0.1s,
     transform 0.1s;
-  width: 440px;
-  min-width: 300px;
-  z-index:10;
-    display: flex;
-  flex-direction: column;
-
+  display: flex;
 }
 
 .card {
+  z-index: 10;
+  position: relative;
   border-radius: 12px;
   max-width: 80%;
+  width: 440px;
+  min-width: 300px;
+  flex-direction: column;
 }
 
 .card:hover {
   box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);
   transform: scale(1.01);
 }
-
 
 /*
 ----------------- CARD NAV STYLES 
@@ -160,7 +246,6 @@ footer {
   opacity: 1;
 }
 
-
 .card__header {
   padding: 1.25rem 1.5rem 0.75rem;
   flex-shrink: 0;
@@ -169,7 +254,7 @@ footer {
 /*
 -------------------- this styles also apply to "close" btn in Dual Panel Card
 */
-.carousel__nav-btn, 
+.carousel__nav-btn,
 .carousel__nav-close-btn {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 6px;
@@ -191,7 +276,6 @@ footer {
   height: 70%;
   width: 70%;
 }
-
 
 /* specific syles for close btn to make it round and larger font*/
 .carousel__nav-close-btn {
@@ -281,7 +365,7 @@ footer {
 .small-link {
   font-size: 0.9rem;
   margin-top: 8px;
-  color:var(--light-blue);
+  color: var(--light-blue);
 }
 
 /*
@@ -318,7 +402,6 @@ footer {
   background: rgba(255, 255, 255, 1);
 }
 
-
 /*
 ----------------- DUAL PANEL CARDS - card
 */
@@ -347,8 +430,6 @@ footer {
   transition: transform 0.2s ease-in-out;
 }
 
-
-
 /*
 ----------------- DUAL PANEL CARDS - individual panels
 */
@@ -369,7 +450,7 @@ footer {
 
 .panel button:hover {
   background: rgba(0, 0, 0, 0.1);
-  transform: scale(1.0);
+  transform: scale(1);
 }
 
 .panel button:active,
@@ -388,7 +469,6 @@ footer {
 .right-panel {
   background-color: var(--dark-green);
 }
-
 
 /*
 ----------------- FOOTER
