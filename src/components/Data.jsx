@@ -174,7 +174,7 @@ export const backend = [
     title: "SQL + MySQL",
     description: "Diseño relacional, consultas complejas",
   },
-  { title: "Node.js", description: "" },
+  { title: "Node.js", description: "API REST con Express. Arquitectura MVC. Vistas dinámicas con EJS" },
   { title: "Amazon Web Services", description: "S3, Route 53, CloudFront" },
 ];
 

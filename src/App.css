@@ -6,7 +6,7 @@
   --light-green: #298fa3;
   --light-blue: #34c4e0;
   --title-color: #b1e7f1;
-      --header: #8bd5e0d5;
+  --header: #8bd5e0d5;
 }
 
 /*
@@ -75,6 +75,7 @@ main {
   height: 100%;
   min-height: 100lvh;
   width: 100%;
+  margin: auto;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -85,7 +86,7 @@ main {
 }
 
 header {
-  background:var(--header);
+  background: var(--header);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   box-shadow: 0 0 4px 1px var(--dark-green);
@@ -137,34 +138,33 @@ header img {
 
 header h2 {
   font-size: 1.2rem;
-  color: var(--dark-green)
-  
+  color: var(--dark-green);
 }
 
 .language-tab {
   display: flex;
   justify-content: center;
   align-items: center;
-  position:fixed;
-  right:0;
-  bottom: 60px;
-  width: 50px;
-  height: 80px;
+  position: fixed;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  top: 80px;
   background-color: var(--title-color);
   border-radius: 8px 0 0 8px;
-    z-index: 100;
+  z-index: 100;
 }
 
 .language-tab__slider {
   display: flex;
-  flex-direction: row;
   position: relative;
-  height: 40px;
-  width: 24px;
+  width: 1rem;
+  height: 1.75rem;
   border-radius: 15px;
   background-color: var(--dark-green);
   cursor: pointer;
-
+  box-sizing: content-box;
+  padding: 3px;
 }
 
 .language-tab__slider-button {
@@ -175,17 +175,24 @@ header h2 {
   font-weight: 800;
   color: var(--dark-green);
   position: relative;
-  height: 24px;
-  width: 24px;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   background-color: var(--title-color);
   transition: transform 0.2s ease-in;
-
 }
 
 .language-slider__button-eng {
-  transform: translateY(16px);
+  transform: translateY(0.75rem);
+}
 
+.language-tab {
+}
+
+.language-tab__slider {
+}
+
+.language-tab__slider-button {
 }
 
 /*
@@ -462,7 +469,6 @@ footer {
 .left-panel {
   background-color: var(--light-green);
 }
-
 
 .right-panel {
   background-color: var(--dark-green);

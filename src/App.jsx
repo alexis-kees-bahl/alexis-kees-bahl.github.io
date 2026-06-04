@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Lang from "./components/LanguageBtn"
+import Lang from "./components/LanguageBtn";
 import Card from "./components/Card";
 import greenHexa from "./assets/green-hexagons.jpg";
 import {
@@ -25,15 +25,13 @@ import {
   backendEng,
   otrasEng,
   habilidadesBlandasEng,
-} from "./components/DataEng"
-
-
+} from "./components/DataEng";
 
 const RenderEsp = () => {
   return (
     <>
       <main>
-        <Card title="CV Alexis Kees"/>
+        <Card title="CV Alexis Kees" />
         <Card
           title="Redes y contacto"
           items={datosPersonales}
@@ -41,10 +39,10 @@ const RenderEsp = () => {
           english={false}
         />
 
-        <Card title="Formación" items={formacion} english={false}/>
+        <Card title="Formación" items={formacion} english={false} />
 
         <Card
-           title="Habilidades técnicas"
+          title="Habilidades técnicas"
           items={frontend}
           //Optional elements to render a DualPanel Card
           items2={backend}
@@ -52,16 +50,22 @@ const RenderEsp = () => {
           secondPanelTitle="Backend"
           english={false}
         />
+        <Card
+          title="Otras habilidades técnicas"
+          items={otras}
+          english={false}
+        />
+        <Card title="Proyectos" items={proyectos} english={false} />
 
-        <Card title="Otras habilidades técnicas" items={otras} english={false}/>
+        <Card title="Experiencia" items={experiencia} english={false} />
 
-        <Card title="Experiencia" items={experiencia} english={false}/>
+        <Card title="Inglés" items={ingles} english={false} />
 
-        <Card title="Proyectos" items={proyectos} english={false}/>
-
-        <Card title="Inglés" items={ingles} english={false}/>
-
-        <Card title="Habilidades blandas" items={habilidadesBlandas} english={false}/>
+        <Card
+          title="Habilidades blandas"
+          items={habilidadesBlandas}
+          english={false}
+        />
       </main>
 
       <footer>
@@ -84,7 +88,7 @@ const RenderEng = () => {
   return (
     <>
       <main>
-        <Card title="Alexis Kees CV"/>
+        <Card title="Alexis Kees CV" />
         <Card
           title="Contact & links"
           items={datosPersonalesEng}
@@ -92,7 +96,7 @@ const RenderEng = () => {
           english={true}
         />
 
-        <Card title="Education" items={formacionEng} english={true}/>
+        <Card title="Education" items={formacionEng} english={true} />
 
         <Card
           title="Technical skills"
@@ -104,15 +108,19 @@ const RenderEng = () => {
           english={true}
         />
 
-        <Card title="Other technical skills" items={otrasEng} english={true}/>
+        <Card title="Other technical skills" items={otrasEng} english={true} />
+        
+        <Card title="Projects" items={proyectosEng} english={true} />
 
-        <Card title="Experience" items={experienciaEng} english={true}/>
+        <Card title="Experience" items={experienciaEng} english={true} />
 
-        <Card title="Projects" items={proyectosEng} english={true}/>
+        <Card title="English" items={inglesEng} english={true} />
 
-        <Card title="English" items={inglesEng} english={true}/>
-
-        <Card title="Soft skills" items={habilidadesBlandasEng} english={true}/>
+        <Card
+          title="Soft skills"
+          items={habilidadesBlandasEng}
+          english={true}
+        />
       </main>
 
       <footer>
@@ -131,7 +139,6 @@ const RenderEng = () => {
   );
 };
 
-
 export default function App() {
   const [english, setEnglish] = useState(false);
   return (
@@ -145,7 +152,7 @@ export default function App() {
           alt="Fondo de pantalla"
         />
       </picture>
-      <Lang english={english} setEnglish={setEnglish}/>
+      <Lang english={english} setEnglish={setEnglish} />
 
       {/*
       Main section containing Card components
