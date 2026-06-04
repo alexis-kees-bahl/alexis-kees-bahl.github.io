@@ -168,6 +168,7 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
             titleColor={card.titleColor}
             overlayColor={card.overlayColor}
             isActive={index === current}
+            english={english}
           />
         ))}
       </div>
