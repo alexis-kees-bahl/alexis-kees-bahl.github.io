@@ -44,7 +44,7 @@ const RenderEsp = () => {
         <Card title="Formación" items={formacion} english={false}/>
 
         <Card
-          title="Habilidades técnicas"
+           title="Habilidades técnicas"
           items={frontend}
           //Optional elements to render a DualPanel Card
           items2={backend}

@@ -199,7 +199,7 @@ footer {
     rgba(255, 255, 255, 0.3) 0% 15%,
     rgba(255, 255, 255, 0.1) 30% 60%,
     rgba(255, 255, 255, 0.3) 78% 78.5%,
-    rgba(255, 255, 255, 0.1) 88% 100%
+    rgba(255, 255, 255, 0.1) 95% 100%
   );
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -275,6 +275,7 @@ footer {
 .carousel__nav-close-btn img {
   height: 70%;
   width: 70%;
+  border-radius: 50%;
 }
 
 /* specific syles for close btn to make it round and larger font*/
@@ -462,9 +463,6 @@ footer {
   background-color: var(--light-green);
 }
 
-.panel h3 {
-  color: var(--title-color);
-}
 
 .right-panel {
   background-color: var(--dark-green);
