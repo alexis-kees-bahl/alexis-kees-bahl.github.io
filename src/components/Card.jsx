@@ -34,9 +34,14 @@ export default function Card({ title, items = [], items2 = null, firstPanelTitle
     }
   };
 
+  useEffect(()=>{
+    setCards(items);
+    setActiveSet(items);
+  }, [items])
+
   useEffect(() => {
     fillItems2();
-  }, []);
+  }, [items2]);
 
   const go = (n) => {
     setCurrent(Math.max(0, Math.min(n, activeSet.length - 1)));
