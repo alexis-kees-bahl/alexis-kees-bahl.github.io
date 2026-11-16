@@ -13,7 +13,7 @@ export const textoMultilinea = (
     {"\n"}
     CV (PDF):{" "}
     <a
-      href="https://drive.google.com/file/d/1NFE8UHXJRUeDdaXa9-vPy-ovzVlmGI0Q/view?usp=sharing"
+      href="https://docs.google.com/document/d/1Ny_LQJFJZZC3pB989_GdC1xx2vsAbn6cGIXih2ETBp4"
       target="blank"
     >
       Curriculum Vitae
